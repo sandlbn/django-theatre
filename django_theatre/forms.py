@@ -2,6 +2,7 @@
 __author__ = 'sandlbn'
 from django import forms
 from django.core.files.images import get_image_dimensions
+from django.utils.translation import ugettext as _
 from models import PerformanceDonor, PerformanceGenre, Performance
 
 
@@ -18,6 +19,6 @@ class PerformanceDonorForm(forms.ModelForm):
             w, h = get_image_dimensions(picture)
             if h > 110:
                 raise forms.ValidationError(
-                      (u'Image must have a maximum 110px')
+                      _(u'Image can not be higher than 110px')
                       )
             return picture
