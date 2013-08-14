@@ -9,7 +9,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.utils.datetime_safe import datetime
 
 
-class FrontPage(ListView):
+class FrontPageView(ListView):
     ''' Start Page with promoted Performances '''
     queryset = PerformanceTime.objects.filter(
                published=True,
@@ -20,7 +20,7 @@ class FrontPage(ListView):
     template_name = 'index.html'
 
 
-class Performance(DetailView):
+class PerformanceView(DetailView):
     ''' Single Performance '''
     model = Performance
     slug_field = 'slug'
