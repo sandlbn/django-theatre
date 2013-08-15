@@ -6,6 +6,12 @@ from django.utils import timezone
 from easymode.i18n.decorators import I18n
 from django.template.defaultfilters import slugify
 
+'''
+Narrow the list of languages ​​such that you need and add to your settings file
+, for example:
+LANGUAGES = (('en','English'),('pl','Polish'),('ue','Ukraine'),)
+'''
+
 
 @I18n('name')
 class PerformanceGenre(models.Model):
@@ -24,8 +30,7 @@ class PerformanceGenre(models.Model):
         return self.name
 
 
-@I18n('description')
-@I18n('name')
+@I18n('description', 'name')
 class Performance(models.Model):
     '''Performance description '''
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
@@ -91,9 +96,7 @@ class PerformanceDonor(models.Model):
         return self.name
 
 
-@I18n('long_text')
-@I18n('short_text')
-@I18n('name')
+@I18n('long_text', 'short_text', 'name')
 class News(models.Model):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
@@ -114,8 +117,7 @@ class News(models.Model):
         return self.name
 
 
-@I18n('long_text')
-@I18n('name')
+@I18n('long_text', 'name')
 class StaticPage(models.Model):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)

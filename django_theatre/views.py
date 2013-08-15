@@ -25,3 +25,9 @@ class PerformanceView(DetailView):
     model = Performance
     slug_field = 'slug'
     template_name = 'performance.html'
+
+
+class PerformanceTimeView(DetailView):
+    ''' Single Performance Time '''
+    model = PerformanceTime
+    template_name = 'performance.html'

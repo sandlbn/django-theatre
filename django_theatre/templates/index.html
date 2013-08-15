@@ -1,1 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load url from future %}
+{% trans "Przedstawienia." %}
+{% block content %}
+<ul>
+{% for performance in performances %}
+
+	<li><a href="{% url 'django_theatre:performance_time' performance.slug %}">{{ performance.performance.name }}</a></li>
+
+{% endfor %}
+</ul>
+{% endblock %}
