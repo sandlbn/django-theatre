@@ -8,9 +8,9 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, TemplateView
 from django.utils.datetime_safe import datetime
 from django.views.generic.edit import CreateView, UpdateView,DeleteView, FormMixin
-from braces.views import LoginRequiredMixin,CsrfExemptMixin
+from braces.views import CsrfExemptMixin
 
- 
+
 class PerformancesView(ListView):
     ''' Performaces List '''
     queryset = Performance.objects.filter().order_by('-id')

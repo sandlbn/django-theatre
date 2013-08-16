@@ -24,10 +24,11 @@ class PerformanceView(DetailView):
     ''' Single Performance '''
     model = Performance
     slug_field = 'slug'
+    context_object_name = 'performances'
     template_name = 'performance.html'
 
 
 class PerformanceTimeView(DetailView):
     ''' Single Performance Time '''
     model = PerformanceTime
-    template_name = 'performance.html'
+    context_object_name = 'performance'
