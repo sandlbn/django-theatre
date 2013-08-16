@@ -37,6 +37,9 @@ class Performance(models.Model):
                              null=False, blank=False, unique=True)
     description = models.TextField(verbose_name=_(u'Description'))
     payroll = models.TextField(verbose_name=_(u'Payroll'))
+    photo = models.ImageField(upload_to='performance/photo',
+                              verbose_name=_(u'Photo')
+                              )
     genre = models.ForeignKey(PerformanceGenre)
     slug = models.SlugField(verbose_name=_(u'Slug'))
     created = models.DateTimeField(verbose_name=_(u'Date published'),
