@@ -6,7 +6,7 @@
 <ul>
 {% for performance in performances %}
 
-	<li><a href="{% url 'django_theatre:performance_time' performance.slug %}">{{ performance.performance.name }}</a></li>
+<li><a href="{% url 'django_theatre:performance_time' performance.slug %}">{{ performance.performance.name }}</a></li>
 
 {% endfor %}
 </ul>

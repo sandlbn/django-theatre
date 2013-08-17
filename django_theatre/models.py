@@ -6,12 +6,6 @@ from django.utils import timezone
 from easymode.i18n.decorators import I18n
 from django.template.defaultfilters import slugify
 
-'''
-Narrow the list of languages ​​such that you need and add to your settings file
-, for example:
-LANGUAGES = (('en','English'),('pl','Polish'),('ue','Ukraine'),)
-'''
-
 
 @I18n('name')
 class PerformanceGenre(models.Model):
