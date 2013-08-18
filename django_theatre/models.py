@@ -7,28 +7,34 @@ from easymode.i18n.decorators import I18n
 from django.template.defaultfilters import slugify
 
 
+class TimeStampedModel(models.Model):
+    """
+    An abstract base class model that provides selfupdating
+    ``created`` and ``modified`` fields. following @pydanny
+    """
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
 @I18n('name')
-class PerformanceGenre(models.Model):
+class PerformanceGenre(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     slug = models.SlugField(verbose_name=_(u'Slug'))
-    created = models.DateTimeField(verbose_name=_(u'Date created'),
-                                   editable=False)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
 
-    def save(self, *args, **kwargs):
+    def save(self):
         if not self.id:
             self.slug = slugify(self.name)
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(PerformanceGenre, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
 @I18n('description', 'name')
-class Performance(models.Model):
+class Performance(TimeStampedModel):
     '''Performance description '''
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
@@ -39,22 +45,16 @@ class Performance(models.Model):
                               )
     genre = models.ForeignKey(PerformanceGenre)
     slug = models.SlugField(verbose_name=_(u'Slug'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   editable=False)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(Performance, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
-class PerformanceTime(models.Model):
+class PerformanceTime(TimeStampedModel):
     '''Performance Schedule '''
     performance = models.ForeignKey(Performance,
                                     verbose_name=_(u'Performance'))
@@ -63,9 +63,6 @@ class PerformanceTime(models.Model):
     slug = models.SlugField(verbose_name=_(u'Slug'))
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
     frontpage = models.BooleanField(verbose_name=_(u'On FrontPage ?'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   editable=False)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
 
     def save(self, *args, **kwargs):
         ''' create a slug string performance,2012,23,12,19,00 '''
@@ -80,16 +77,13 @@ class PerformanceTime(models.Model):
                         self.performance_date.min,
                          )
                         )
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(PerformanceTime, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u'{0} {1}'.format(self.performance.name, self.performance_date)
 
 
 @I18n('name')
-class PerformanceDonor(models.Model):
+class PerformanceDonor(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     donor_logo = models.ImageField(upload_to='donors/logo',
@@ -97,22 +91,13 @@ class PerformanceDonor(models.Model):
                                    blank=True, null=True)
     link = models.URLField(verbose_name=u'Link', blank=True, null=True)
     performance = models.ForeignKey(Performance)
-    created = models.DateTimeField(verbose_name=_(u'Date created'),
-                                   default=timezone.now)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(PerformanceDonor, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
 @I18n('long_text', 'short_text', 'name')
-class News(models.Model):
+class News(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     short_text = models.CharField(max_length=255,
@@ -120,23 +105,17 @@ class News(models.Model):
     long_text = models.TextField(verbose_name=_(u'Long Text'))
     slug = models.SlugField(verbose_name=_(u'Slug'))
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   default=timezone.now)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(News, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
 @I18n('long_text', 'name')
-class StaticPage(models.Model):
+class StaticPage(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     long_text = models.TextField(verbose_name=_(u'Long Text'))
@@ -149,53 +128,30 @@ class StaticPage(models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(StaticPage, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
 @I18n('name')
-class MenuTop(models.Model):
+class MenuTop(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
                              null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   editable=False)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
-
-    def save(self, *args, **kwargs):
-        ''' On save, update timestamps '''
-        if not self.id:
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(MenuTop, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
 
 @I18n('name')
-class MenuBottom(models.Model):
+class MenuBottom(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                              null=False, blank=False, unique=True)
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
                              null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   editable=False)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
-
-    def save(self, *args, **kwargs):
-        ''' On save, update timestamps '''
-        if not self.id:
-            self.created = timezone.now()
-        self.edited = timezone.now()
-        return super(MenuTop, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
