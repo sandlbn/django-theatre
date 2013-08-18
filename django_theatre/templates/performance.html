@@ -2,18 +2,18 @@
 {% block content %}
 <div class="row">
 <div class="span6">
-<h4>{{ object.performance.name }}</h4>
+<h2>{{ object.performance.name }}</h2>
 <p>
-{{ object.performance.description }}
+{{ object.performance.description|linebreaksbr }}
 
 </p>
 </div>
-<div class="span6">
-<img src=""/>
-<ul>
+<div class="span6 medias">
+<img src="/media/img/dyptyk_sklejka.jpg" class="thumbnail"/>
+<p class="teatr">
 {{ object.performance.genre.name|upper	 }}<br/>
 {{ object.performance_date|date:"Y-m-d / H:m / F"|upper }}<br/>
-</ul>
+</p>
 </div>
 </div>
 {% endblock %}
