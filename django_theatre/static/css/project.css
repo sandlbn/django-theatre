@@ -1,0 +1,163 @@
+.muzyka {
+	padding: 0px;
+	margin: 0px;
+	background-color: rgb(237, 178, 31);
+}
+
+.muzyka p {
+	position: relative;
+	width: 88%;
+	text-align: justify;
+	overflow: hidden;
+	z-index: 0;
+	margin: 0px auto 0 auto;
+}
+.teatr_performance {
+background-color: rgb(237, 178, 31);
+font-family:Lato;
+font-size: 20px;
+line-height: 30px;
+font-weight: bold;
+width: 100%;
+color: #fff;
+margin-top: 5px;
+}
+.teatr_performance_payroll  {
+
+line-height: 16px;
+font-weight: light;
+background-color: rgb(237, 178, 31);
+font-family:Lato;
+font-size: 14px;
+width: 100%;
+color: #fff;
+}
+.teatr_performance p {
+	position: relative;
+	width: 88%;
+	text-align: justify;
+	overflow: hidden;
+	z-index: 0;
+	margin: 0px auto 0 auto;
+}
+.muzyka img:hover {
+	opacity: 0;
+}
+input,textarea,.uneditable-input {
+	width: auto;
+}
+.search-query {
+
+max-width: 130px;
+}
+.black {
+background-color: #ccc;
+height: 310px;
+}
+.navbar .nav>li>a {
+font-weight: 300;
+}
+a>legend {
+font-size: 12px;
+line-height: 12px;
+border:0px;
+}
+a .img_newsletter {
+margin: 5px 0 5px 0;
+}
+
+.navbar .brand {
+	padding: 19px 20px 0px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.img-front {
+	max-height: 300px;
+}
+
+.row-fluid-ce {
+	min-height: 100px;
+}
+
+.row-fluid [class*="span"] {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.footer {
+	font-size: 12px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 11px;
+	padding-top: 5px;
+}
+
+.links a {
+	padding: 2px;
+	color: #000;
+}
+.featured-wrapper {
+font-family:Lato;
+font-weight: light;
+position: absolute;
+color: #000;
+z-index: 9;
+height: 30px;
+width: 265px;
+background-color: rgba(255, 255, 255, 0.5);
+background-repeat: no-repeat;
+background-position: top left;
+background-image: url('/media/img/slash_first.png');
+}
+
+.featured-wrapper-down {
+
+margin: 5px 5px 5px 5px;
+width: 263px;
+}
+.featured-wrapper-right {
+
+margin: 0px 5px 5px 25px;
+width: 275px;
+
+}
+
+.featured-wrapper-left {
+
+margin: 0px 5px 5px 0px;
+width: 460px;
+
+}
+.featured-wrapper p {
+padding: 0px;
+margin-left: 25px;
+line-height: 15px;
+}
+h1,h2,h3 { 
+
+font-family: Lato;
+font-weight: 300;
+}
+h3 {
+
+
+}
+h3 {
+
+background-color: rgba(45, 44, 44, 0.3);
+padding: 5px;
+font-size: 20px;
+
+}
+p {
+
+ text-align: justify; text-justify: newspaper;
+ padding: 5px;
+ color: #000;
+}
+.medias img {
+width:100%;
+}
