@@ -19,6 +19,11 @@ class PerformanceDonorForm(forms.ModelForm):
             w, h = get_image_dimensions(picture)
             if h > 110:
                 raise forms.ValidationError(
-                      _(u'Image can not be higher than 110px')
-                      )
+                    _(u'Image can not be higher than 110px')
+                )
             return picture
+
+
+class PerformanceGenre(forms.ModelForm):
+    class Meta:
+        model = PerformanceGenre

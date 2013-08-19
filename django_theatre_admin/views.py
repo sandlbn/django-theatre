@@ -32,3 +32,21 @@ class PerformanceTimesView(ListView):
         return PerformanceTime.objects.filter(
                 performance=self.performance
                 ).order_by('-date')
+
+
+class PerformanceDeleteView(DeleteView):
+    template_name = 'performance_time/performance_time_delete.html'
+    model = PerformanceTime
+    success_url = '/admin2/performance_time/list/'
+
+
+class RepertuarCreate(CreateView):
+    template_name = 'performance_time/performance_time_create.html'
+    model = PerformanceTime
+    success_url = '/admin2/performance_time/list/'
+
+
+class RepertuarUpdate(UpdateView):
+    template_name = 'performance_time/performance_time_create_update.html'
+    model = PerformanceTime
+    success_url = '/admin2/performance_time/list/'

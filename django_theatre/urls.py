@@ -2,7 +2,7 @@
 __author__ = 'sandlbn'
 
 from django.conf.urls import patterns, url
-from views import FrontPageView, PerformanceView, PerformanceTimeView
+from views import FrontPageView, PerformanceView, PerformanceTimeView, PerformanceMonth
 
 
 urlpatterns = patterns('django_theatre.views',
@@ -15,4 +15,8 @@ urlpatterns = patterns('django_theatre.views',
                 r'^performance,(?P<slug>.+)/$',
                 PerformanceTimeView.as_view(),
                 name='performance_time'),
+            url(
+                r'^performancelist/$',
+                PerformanceMonth.as_view(),
+                name='performance_list'),
             )

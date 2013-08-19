@@ -22,7 +22,7 @@ class TimeStampedModel(models.Model):
 @I18n('name')
 class PerformanceGenre(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     slug = models.SlugField(verbose_name=_(u'Slug'))
 
     def save(self):
@@ -37,7 +37,7 @@ class PerformanceGenre(TimeStampedModel):
 class Performance(TimeStampedModel):
     '''Performance description '''
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     description = models.TextField(verbose_name=_(u'Description'))
     payroll = models.TextField(verbose_name=_(u'Payroll'))
     photo = models.ImageField(upload_to='performance/photo',
@@ -68,15 +68,15 @@ class PerformanceTime(TimeStampedModel):
         ''' create a slug string performance,2012,23,12,19,00 '''
         if not self.id:
             self.slug = slugify(
-                        "{0},{1},{2},{3},{4},{5}".format(
-                        self.performance.name,
-                        self.performance_date.year,
-                        self.performance_date.month,
-                        self.performance_date.day,
-                        self.performance_date.hour,
-                        self.performance_date.min,
-                         )
-                        )
+                "{0},{1},{2},{3},{4},{5}".format(
+                    self.performance.name,
+                    self.performance_date.year,
+                    self.performance_date.month,
+                    self.performance_date.day,
+                    self.performance_date.hour,
+                    self.performance_date.min,
+                )
+            )
 
     def __unicode__(self):
         return u'{0} {1}'.format(self.performance.name, self.performance_date)
@@ -85,7 +85,7 @@ class PerformanceTime(TimeStampedModel):
 @I18n('name')
 class PerformanceDonor(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     donor_logo = models.ImageField(upload_to='donors/logo',
                                    verbose_name=_(u'Donor Logo'),
                                    blank=True, null=True)
@@ -99,7 +99,7 @@ class PerformanceDonor(TimeStampedModel):
 @I18n('long_text', 'short_text', 'name')
 class News(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     short_text = models.CharField(max_length=255,
                                   verbose_name=_(u'Short Text'))
     long_text = models.TextField(verbose_name=_(u'Long Text'))
@@ -117,13 +117,10 @@ class News(TimeStampedModel):
 @I18n('long_text', 'name')
 class StaticPage(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     long_text = models.TextField(verbose_name=_(u'Long Text'))
     slug = models.SlugField(verbose_name=_(u'Slug'))
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
-    created = models.DateTimeField(verbose_name=_(u'Date published'),
-                                   default=timezone.now)
-    edited = models.DateTimeField(verbose_name=_(u'Date edited'))
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -136,9 +133,9 @@ class StaticPage(TimeStampedModel):
 @I18n('name')
 class MenuTop(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
-                             null=False, blank=False)
+                            null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
 
     def __unicode__(self):
@@ -148,9 +145,9 @@ class MenuTop(TimeStampedModel):
 @I18n('name')
 class MenuBottom(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                             null=False, blank=False, unique=True)
+                            null=False, blank=False, unique=True)
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
-                             null=False, blank=False)
+                            null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
 
     def __unicode__(self):
