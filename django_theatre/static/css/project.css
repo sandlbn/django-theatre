@@ -145,6 +145,11 @@ line-height: 15px;
 .article {
     margin-left: 2px;
 }
+.genre_list {
+    font-family: Lato;
+    position: absolute;
+    bottom: 0;
+}
 h1,h2,h3 { 
 
 font-family: Lato;
