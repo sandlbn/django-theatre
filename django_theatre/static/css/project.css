@@ -115,8 +115,8 @@ background-image: url('/media/img/slash_first.png');
 
 .featured-wrapper-down {
 
-margin: 5px 5px 5px 5px;
-width: 263px;
+margin: 0px;
+width: 274px;
 }
 .featured-wrapper-right {
 
@@ -135,6 +135,15 @@ width: 460px;
 padding: 0px;
 margin-left: 25px;
 line-height: 15px;
+}
+.donator {
+    border: 0px;
+    margin-left: 0px;
+    float: right;
+
+}
+.article {
+    margin-left: 2px;
 }
 h1,h2,h3 { 
 

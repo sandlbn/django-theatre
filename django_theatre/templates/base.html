@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +28,10 @@
 									<li><a href="">KUP BILET</a></li>
 									<li><a href="">O TEATRZE</a></li>
 									<li class="dropdown"><a class="dropdown-toggle"
-										data-toggle="dropdown"> KONTO <b class="caret"></b>
+										data-toggle="dropdown"> ZALOGUJ <b class="caret"></b>
 									</a>
 										<ul class="dropdown-menu">
-											<li><a href="">ZALOGUJ</a></li>
+											<li><a href="">NOWE KONTO</a></li>
 										</ul></li>
 									<li><a href="">KONTAKT</a></li>
 									<li>
@@ -51,6 +52,31 @@
 {% block content %}
 
 		{% endblock %}
+<div class="row-fluid">
+    <div class="span1"></div>
+	<div class="span6 footer">
+		<div class="links">
+			<a href="">ARCHIWUM</a> <a href="">{% trans 'MEDIA' %}</a> <a href="">REGULAMIN
+				SPRZEDAŻY</a> <a href="">FACEBOOK</a> <a href="">TWITTER</a>
+		</div>
+    </div>
+        <div class="span5">
+
+        <div class="row-fluid">
+<div class="thumbnail span3 donator pull-right">
+<img src="/media/img/donator/pge_4.png">
+</div>
+<div class="thumbnail span3 donator pull-right">
+<img src="/media/img/donator/rl.png">
+</div>
+<div class="thumbnail span3 donator pull-right">
+<img src="/media/img/donator/tvpkultra.png">
+</div>
+    
+</div>
+        </div>
+	</div>
+</div>
 	</div>
 </body>
 

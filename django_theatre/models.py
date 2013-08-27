@@ -33,7 +33,7 @@ class PerformanceGenre(TimeStampedModel):
         return self.name
 
 
-@I18n('description', 'name')
+@I18n('name', 'description')
 class Performance(TimeStampedModel):
     '''Performance description '''
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),

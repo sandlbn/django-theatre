@@ -8,7 +8,6 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, TemplateView
 from django.utils.datetime_safe import datetime
 
-
 class FrontPageView(ListView):
     ''' Start Page with promoted Performances '''
     queryset = PerformanceTime.objects.filter(
