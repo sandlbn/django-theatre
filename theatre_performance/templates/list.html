@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load url from future %} 
+{% block content %}
+<div class="row-fluid">
+	<div class="span6">
+	<h2>WRZESIEŃ</h2>
+	
+	</div>
+<div class="span6 medias">
+<img src="/media/img/dyptyk_sklejka.jpg" class="thumbnail"/>
+<p class="teatr_performance">
+{{ object.performance.genre.name|upper	 }}<br/>
+{{ object.performance_date|date:"Y-m-d / H:m / F"|upper }}<br/>
+
+<br/>
+<small><b>SKŁAD:</b><br/>{{ object.performance.payroll|linebreaksbr }}</small>
+</p>
+</div>
+</div>
+{% endblock %}

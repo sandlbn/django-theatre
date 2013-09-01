@@ -48,7 +48,7 @@ input,textarea,.uneditable-input {
 }
 .search-query {
 
-max-width: 130px;
+max-width: 80px;
 }
 .black {
 background-color: #ccc;
@@ -174,4 +174,11 @@ p {
 }
 .medias img {
 width:100%;
+}
+#logo {
+    padding-top: 0px;
+
+}
+button {
+    font-family: Lato;
 }

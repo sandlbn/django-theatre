@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sandlbn'
-from models import Performance, PerformanceTime
+from .models import Performance
+from .models import PerformanceTime
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template.context import RequestContext
-from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, TemplateView
 from django.utils.datetime_safe import datetime
+
 
 class FrontPageView(ListView):
     ''' Start Page with promoted Performances '''
