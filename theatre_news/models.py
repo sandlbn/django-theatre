@@ -41,7 +41,10 @@ class News(TimeStampedModel):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
-        super(StaticPage, self).save(*args, **kwargs)
+        super(News, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('news-detail', args=[self.slug])
 
     def __unicode__(self):
         return self.name

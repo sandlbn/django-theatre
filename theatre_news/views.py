@@ -16,20 +16,24 @@ from django.core.urlresolvers import reverse_lazy
 class NewsCreateView(CreateView, StaffuserRequiredMixin):
 
     model = News
+    form_class = NewsForm
+    success_url = reverse_lazy('backend-news-list')
     template_name = 'theatre_news/backend/news_create_form.html'
 
 
 class NewsUpdateView(UpdateView, StaffuserRequiredMixin):
 
     model = News
+    form_class = NewsForm
+    success_url = reverse_lazy('backend-news-list')
     template_name = 'theatre_news/backend/news_update_form.html'
 
 
 class NewsDeleteView(DeleteView, StaffuserRequiredMixin):
 
     model = News
-    success_url = reverse_lazy('admin-news-list')
-    template_name = 'theatre_news/backend/news_confirm_delete_form.html'
+    success_url = reverse_lazy('backend-news-list')
+    template_name = 'theatre_news/backend/news_confirm_delete.html'
 
 
 class NewsListView(ListView):

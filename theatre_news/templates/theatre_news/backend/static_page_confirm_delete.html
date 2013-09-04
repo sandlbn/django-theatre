@@ -8,8 +8,12 @@
     <form class="form-inline pagination-centered" action="." method="post">
     <legend>{% trans 'Delete Static Page' %}</legend>
     {% csrf_token %} 
-    <a href="{% url 'backend-static-list' %}" class="btn btn-primary">{% trans 'Back to list' %}</a>
-    <input type="submit" value="{% trans 'Skasuj' %}" class="btn btn-warning">
+    <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{% trans 'Warning!' %}</strong> {% blocktrans %} Are your sure to delete this Page ? {% endblocktrans %}
+    </div>
+    <a href="{% url 'backend-static-list' %}" class="btn btn-primary">{% trans 'No' %}</a>
+    <input type="submit" value="{% trans 'Yes' %}" class="btn btn-warning">
 </div>
 {% endblock %}
 {% block js %}

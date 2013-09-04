@@ -62,12 +62,12 @@ urlpatterns += patterns(
         name='backend-news-create'
     ),
     url(
-        r'^backend/news/update/(?P<pk>\d)$',
+        r'^backend/news/update/(?P<pk>\d)/$',
         NewsUpdateView.as_view(),
-        name='backend-news-create'
+        name='backend-news-update'
     ),
     url(
-        r'^backend/news/delete/(?P<pk>\d)$',
+        r'^backend/news/delete/(?P<pk>\d)/$',
         NewsDeleteView.as_view(),
         name='backend-news-delete'
     ),

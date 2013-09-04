@@ -5,7 +5,9 @@
     <div class="span12">
         <h1>{{ object.name }}</h1>
         <article>
+            {% autoescape off %}
             {{ object.long_text }}
+            {% endautoescape %}
         </article>
     </div>
 </div>
