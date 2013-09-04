@@ -1,10 +1,16 @@
-{% extends 'core/backend/base.html' %}
+{% extends 'theatre_core/backend/base.html' %}
 {% load bootstrap_toolkit %}
 {% load i18n %}
 
-{% block context %}
+{% block content %}
 
-
+<div class="span12"> 
+    <form class="form-inline pagination-centered" role="form" action="{% url 'backend-static-delete' %}" method="post">
+    <legend>{% trans 'Delete Static Page' %}</legend>
+    {% csrf_token %} 
+    <a href="{% url 'backend-static-list' %}" class="btn btn-primary">{% trans 'Back to list' %}"</a>
+    <input type="submit" value="{% trans 'Skasuj' %}" class="btn btn-warning">
+</div>
 {% endblock %}
 {% block js %}
 

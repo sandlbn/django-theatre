@@ -2,6 +2,8 @@
 __author__ = 'sandlbn'
 from .models import News
 from .models import StaticPage
+from .forms import StaticPageForm
+from .forms import NewsForm
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import CreateView
@@ -23,7 +25,7 @@ class NewsUpdateView(UpdateView, StaffuserRequiredMixin):
     template_name = 'theatre_news/backend/news_update_form.html'
 
 
-class NewsDeleteView(DeleteView,StaffuserRequiredMixin):
+class NewsDeleteView(DeleteView, StaffuserRequiredMixin):
 
     model = News
     success_url = reverse_lazy('admin-news-list')
@@ -35,10 +37,12 @@ class NewsListView(ListView):
     model = News
     template_name = 'theatre_news/frontend/news_list.html'
 
+
 class NewsListBackendView(ListView, StaffuserRequiredMixin):
 
     model = News
     template_name = 'theatre_news/backend/news_list.html'
+
 
 class NewsDetailView(DetailView):
 
@@ -49,19 +53,23 @@ class NewsDetailView(DetailView):
 class StaticPageCreateView(CreateView):
 
     model = StaticPage
+    form_class = StaticPageForm
+    success_url = reverse_lazy('backend-static-list')
     template_name = 'theatre_news/backend/static_page_create_form.html'
 
 
 class StaticPageUpdateView(UpdateView):
 
     model = StaticPage
+    form_class = StaticPageForm
+    success_url = reverse_lazy('backend-static-list')
     template_name = 'theatre_news/backend/static_page_update_form.html'
 
 
 class StaticPageDeleteView(DeleteView):
 
     model = StaticPage
-    success_url = reverse_lazy('admin-news-list')
+    success_url = reverse_lazy('backend-static-list')
     template_name = 'theatre_news/backend/static_page_confirm_delete.html'
 
 

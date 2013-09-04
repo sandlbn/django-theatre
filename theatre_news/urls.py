@@ -25,7 +25,7 @@ urlpatterns = patterns(
     url(
         r'^page,(?P<slug>[\w\d-]+)/$',
         StaticPageDetailView.as_view(),
-        name='news-detail'
+        name='static-detail'
     )
 )
 
@@ -42,12 +42,12 @@ urlpatterns += patterns(
         name='backend-static-create'
     ),
     url(
-        r'^backend/static/update/(?P<pk>\d)$',
+        r'^backend/static/update/(?P<pk>\d)/$',
         StaticPageUpdateView.as_view(),
-        name='backend-static-create'
+        name='backend-static-update'
     ),
     url(
-        r'^backend/static/delete/(?P<pk>\d)$',
+        r'^backend/static/delete/(?P<pk>\d)/$',
         StaticPageDeleteView.as_view(),
         name='backend-static-delete'
     ),

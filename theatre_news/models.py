@@ -3,8 +3,10 @@ __author__ = 'sandlbn'
 from django.db import models
 from django.utils.translation import ugettext as _
 from django.utils.text import slugify
+from django.core.urlresolvers import reverse
 from easymode.i18n.decorators import I18n
 from theatre_core.models import TimeStampedModel
+
 
 @I18n('long_text', 'name')
 class StaticPage(TimeStampedModel):
@@ -17,6 +19,10 @@ class StaticPage(TimeStampedModel):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
+        super(StaticPage, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('static-detail', args=[self.slug])
 
     def __unicode__(self):
         return self.name
@@ -35,6 +41,7 @@ class News(TimeStampedModel):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
+        super(StaticPage, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
