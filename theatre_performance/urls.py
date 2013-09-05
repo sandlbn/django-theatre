@@ -2,21 +2,35 @@
 __author__ = 'sandlbn'
 
 from django.conf.urls import patterns, url
-from views import FrontPageView, PerformanceView, PerformanceTimeView, PerformanceMonth
+from .views import FrontPageView
+from .views import PerformanceView
+from .views import PerformanceList
+from .views import PerformanceBackendList
+from .views import PerformanceMonth
+from .views import PerformanceCreateView
+from .views import PerformanceUpdateView
+from .views import PerformanceDeleteView
 
-
-urlpatterns = patterns('django_theatre.views',
-            url(r'^$', FrontPageView.as_view(), name='front_page'),
-            url(
-                r'^performance,(?P<slug>[\w\d-]+)/$',
-                PerformanceView.as_view(),
-                name='performance'),
-            url(
-                r'^performance,(?P<slug>.+)/$',
-                PerformanceTimeView.as_view(),
-                name='performance_time'),
-            url(
-                r'^performancelist/$',
-                PerformanceMonth.as_view(),
-                name='performance_list'),
-            )
+urlatterns += patterns(
+    '.views',
+    url(
+        r'^backend/performance/list/$',
+        PerformanceBackendListView.as_view(),
+        name='backend-performance-list'
+    ),
+    url(
+        r'^backend/static/create/$',
+        PerformanceCreateView.as_view(),
+        name='backend-static-create'
+    ),
+    url(
+        r'^backend/static/update/(?P<pk>\d)/$',
+        PerformanceUpdateView.as_view(),
+        name='backend-static-update'
+    ),
+    url(
+        r'^backend/static/delete/(?P<pk>\d)/$',
+        PerformanceDeleteView.as_view(),
+        name='backend-static-delete'
+    ),
+)
