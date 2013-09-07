@@ -38,6 +38,7 @@ class Performance(TimeStampedModel):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
+        super(Performance, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name

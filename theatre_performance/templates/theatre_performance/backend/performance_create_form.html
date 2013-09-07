@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
 <div class="span12"> 
-    <form class="form-horizontal" action="." method="post">
+    <form class="form-horizontal" enctype="multipart/form-data" action="." method="post">
     <legend>{% trans 'Add news Page' %}</legend>
     {% csrf_token %} 
     {{ form|as_bootstrap:'horizontal' }}

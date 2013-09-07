@@ -21,9 +21,9 @@
         <td>{{object.id}}</td>
         <td>{{object.name}}</td>
         <td><a href="{{ object.get_absolute_url }}">{{ object.get_absolute_url }}</a>
-        <td><a class="btn btn-info" href="{% url 'backend-news-update' object.id %}">
+        <td><a class="btn btn-info" href="{% url 'backend-performance-update' object.id %}">
                 <i class="icon-minus-sign"> </i> {% trans 'Edit' %}</a></td>
-        <td><a class="btn btn-warning" href="{% url 'backend-news-delete' object.id %}">
+        <td><a class="btn btn-warning" href="{% url 'backend-performance-delete' object.id %}">
                 <i class="icon-remove-sign"></i> {% trans 'Delete' %}</a></td>
     </tr>
     {% endfor %}
