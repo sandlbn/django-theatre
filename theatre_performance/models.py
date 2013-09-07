@@ -13,9 +13,10 @@ class PerformanceGenre(TimeStampedModel):
                             null=False, blank=False, unique=True)
     slug = models.SlugField(verbose_name=_(u'Slug'))
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
+        super(PerformanceGenre, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
@@ -82,5 +83,3 @@ class PerformanceDonor(TimeStampedModel):
 
     def __unicode__(self):
         return self.name
-
-

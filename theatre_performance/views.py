@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sandlbn'
 from .models import Performance
+from .models import PerformanceGenre
 from .models import PerformanceTime
 from .forms import PerformanceForm
+from .forms import PerformanceGenreForm
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import CreateView
@@ -46,7 +48,7 @@ class PerformanceList(ListView):
     template_name = 'theatre_performance/performance_list_calendar.html'
 
 
-class PerformanceBackendList(ListView):
+class PerformanceBackendListView(ListView):
     ''' Start Page with listed Performances '''
 
     model = Performance
@@ -73,10 +75,44 @@ class PerformanceDeleteView(DeleteView, StaffuserRequiredMixin):
 
     model = Performance
     success_url = reverse_lazy('backend-performance-list')
-    template_name = 'theatre_performance/backend/performance_confirm_delete.html'
+    template_name = 'theatre_performance/backend/\
+            performance_confirm_delete.html'
 
 
 class PerformanceListBackendView(ListView, StaffuserRequiredMixin):
 
     model = Performance
     template_name = 'theatre_performance/backend/performance_list.html'
+
+
+class PerformanceGenreBackendListView(ListView):
+    ''' Start Page with listed Performances '''
+
+    model = PerformanceGenre
+    template_name = 'theatre_performance/backend/performance_genre_list.html'
+
+
+class PerformanceGenreCreateView(CreateView, StaffuserRequiredMixin):
+
+    model = PerformanceGenre
+    form_class = PerformanceGenreForm
+    success_url = reverse_lazy('backend-performance-genre-list')
+    template_name = \
+            'theatre_performance/backend/performance_genre_create_form.html'
+
+
+class PerformanceGenreUpdateView(UpdateView, StaffuserRequiredMixin):
+
+    model = PerformanceGenre
+    form_class = PerformanceGenreForm
+    success_url = reverse_lazy('backend-performance-genre-list')
+    template_name = 'theatre_performance/backend/'\
+            'performance_genre_update_form.html'
+
+
+class PerformanceGenreDeleteView(DeleteView, StaffuserRequiredMixin):
+
+    model = PerformanceGenre
+    success_url = reverse_lazy('backend-performance-genre-list')
+    template_name = 'theatre_performance/backend/'\
+            'performance_genre_confirm_delete.html'

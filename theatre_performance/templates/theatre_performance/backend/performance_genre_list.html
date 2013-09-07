@@ -1,0 +1,36 @@
+{% extends 'theatre_core/backend/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<table class="table table-striped table-bordered table-hover">
+    <legend>{% trans 'Performance Genre list' %}
+        <a href="{% url 'backend-performance-genre-create' %}" class="btn btn-primary">
+            <i class="icon-plus-sign"></i> 
+            {% trans 'Add Performance Genre' %}</a>
+    </legend>
+    <thead>
+        <th>ID</th>
+        <th>{% trans 'Name' %}</th>
+        <th>{% trans 'Edit' %}</th>
+        <th>{% trans 'Delete' %}</th>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+    <tr>
+        <td>{{object.id}}</td>
+        <td>{{object.name}}</td>
+        <td><a class="btn btn-info" href="{% url 'backend-performance-genre-update' object.id %}">
+                <i class="icon-minus-sign"> </i> {% trans 'Edit' %}</a></td>
+        <td><a class="btn btn-warning" href="{% url 'backend-performance-genre-delete' object.id %}">
+                <i class="icon-remove-sign"></i> {% trans 'Delete' %}</a></td>
+    </tr>
+    {% endfor %}
+
+
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}
+
+

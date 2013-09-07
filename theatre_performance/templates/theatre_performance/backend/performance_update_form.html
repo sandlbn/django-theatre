@@ -1,0 +1,22 @@
+{% extends 'theatre_core/backend/base.html' %}
+{% load bootstrap_toolkit %}
+{% load i18n %}
+{% block js %}
+    {{ form.media }}
+{% endblock %}
+{% block content %}
+<div class="span12"> 
+    <form class="form-horizontal" role="form" action="{% url 'backend-news-update' form.instance.id %}" method="post">
+    <legend>{% trans 'Edit Static Page' %}</legend>
+    {% csrf_token %} 
+    {{ form|as_bootstrap:'horizontal' }}
+    <p class="form-actions">
+    <input type="submit" value="{% trans 'Submit' %}" class="btn btn-primary">
+    </p>
+
+</form>
+</div>
+
+
+{% endblock %}
+
