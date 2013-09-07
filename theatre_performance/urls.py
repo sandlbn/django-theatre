@@ -22,12 +22,20 @@ from .views import PerformanceDonorCreateView
 from .views import PerformanceDonorUpdateView
 from .views import PerformanceDonorDeleteView
 
+"""
+Duplicated for a default view in backend
+"""
 urlpatterns = patterns(
     '.views',
     url(
         r'^backend/performance/list/$',
         PerformanceBackendListView.as_view(),
         name='backend-performance-list'
+    ),
+    url(
+        r'^backend/$',
+        PerformanceBackendListView.as_view(),
+        name='backend-default'
     ),
     url(
         r'^backend/performance/create/$',
