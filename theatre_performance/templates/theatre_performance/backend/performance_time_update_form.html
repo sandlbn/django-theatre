@@ -4,6 +4,7 @@
 {% block js %}
     {{ form.media }}
 {% endblock %}
+{% block title %}{% blocktrans %}Edit Record{% endblocktrans %}{% endblock %}
 {% block content %}
 <div class="span12"> 
     <form class="form-horizontal" role="form" action="{% url 'backend-performance-time-update' form.instance.id %}" method="post">
