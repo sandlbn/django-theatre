@@ -6,8 +6,8 @@
 {% endblock %}
 {% block content %}
 <div class="span12"> 
-    <form class="form-horizontal" role="form" action="{% url 'backend-performance-genre-update' form.instance.id %}" method="post">
-    <legend>{% trans 'Edit Performance Genre' %}</legend>
+    <form class="form-horizontal" role="form" action="{% url 'backend-performance-time-update' form.instance.id %}" method="post">
+    <legend>{% trans 'Edit Performance Time' %}</legend>
     {% csrf_token %} 
     {{ form|as_bootstrap:'horizontal' }}
     <p class="form-actions">

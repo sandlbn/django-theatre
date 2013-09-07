@@ -55,7 +55,7 @@ class PerformanceTime(TimeStampedModel):
     frontpage = models.BooleanField(verbose_name=_(u'On FrontPage ?'))
 
     def save(self, *args, **kwargs):
-        ''' create a slug string performance,2012,23,12,19,00 '''
+        ''' create a slug string eg: performance,2012,23,12,19,00 '''
         if not self.id:
             self.slug = slugify(
                 "{0},{1},{2},{3},{4},{5}".format(
@@ -67,6 +67,7 @@ class PerformanceTime(TimeStampedModel):
                     self.performance_date.min,
                 )
             )
+        super(PerformanceTime, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u'{0} {1}'.format(self.performance.name, self.performance_date)
