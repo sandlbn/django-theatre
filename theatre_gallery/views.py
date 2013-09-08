@@ -49,21 +49,42 @@ class PhotoBackendListView(ListView):
     template_name = template_path(model, 'backend', 'list')
 
     def get_queryset(self):
-        return self.model.objects.filter(gallery_id=self.kwargs['gallery'])
+        return self.model.objects.filter(gallery_id=self.kwargs['gallery_pk'])
+
+    def get_context_data(self, *args, **kwargs):
+
+        context = super(PhotoBackendListView, self).get_context_data(**kwargs)
+        context['gallery_pk'] = self.kwargs['gallery_pk']
+        return context
 
 
 class PhotoCreateView(CreateView, StaffuserRequiredMixin):
 
     model = Photo
     form_class = PhotoForm
-    success_url = reverse_lazy('backend-photo-list')
     template_name = template_path(model, 'backend', 'create_form')
+
+    def get_initial(self):
+
+        initial = super(PhotoCreateView, self).get_initial()
+        initial['gallery'] = self.kwargs['gallery_pk']
+
+        return initial
+
+    def get_success_url(self):
+
+        return reverse_lazy(
+            'backend-photo-list',
+            kwargs={
+                'gallery_pk': self.kwargs['gallery_pk']
+            }
+        )
 
 
 class PhotoUpdateView(UpdateView, StaffuserRequiredMixin):
 
-    model = Gallery
-    form_class = GalleryForm
+    model = Photo
+    form_class = PhotoForm
     success_url = reverse_lazy('backend-photo-list')
     template_name = template_path(model, 'backend', 'update_form')
 

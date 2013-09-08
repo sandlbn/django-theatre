@@ -16,9 +16,9 @@ class Gallery(TimeStampedModel):
     description = models.TextField(verbose_name=_('Description'),
                                    blank=True)
     author = models.CharField(max_length=255, verbose_name=_('Author Name'),
-                              blank=True)
+                              blank=True, null=True)
     slug = models.SlugField(verbose_name=_('Slug'))
-    performance = models.ForeignKey(Performance, blank=True)
+    performance = models.ForeignKey(Performance, blank=True, null=True)
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
 
     def __unicode__(self):
@@ -34,7 +34,7 @@ class Gallery(TimeStampedModel):
 
 
 @I18n('name')
-class Picture(TimeStampedModel):
+class Photo(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_('Name'),
                             blank=True)
     description = models.TextField(verbose_name=_('Description'),

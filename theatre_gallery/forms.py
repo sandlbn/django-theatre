@@ -79,3 +79,6 @@ class PhotoForm(forms.ModelForm):
     class Meta:
 
         model = Photo
+        widgets = {
+            'gallery': forms.widgets.HiddenInput()
+        }
