@@ -30,13 +30,13 @@ class Gallery(TimeStampedModel):
         super(Gallery, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('galery-detail', args=[self.slug])
+        return reverse('frontend-galery-detail', args=[self.slug])
 
 
 @I18n('name')
 class Photo(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_('Name'),
-                            blank=True)
+                            blank=True, null=True)
     description = models.TextField(verbose_name=_('Description'),
                                    blank=True)
     picture = models.ImageField(verbose_name=_('Photo'), upload_to='gallery')
@@ -46,4 +46,4 @@ class Photo(TimeStampedModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('picture-detail', args=[self.pk])
+        return reverse('frontend-picture-detail', args=[self.pk])

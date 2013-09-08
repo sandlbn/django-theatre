@@ -7,23 +7,23 @@ from tinymce.widgets import TinyMCE
 class GalleryForm(forms.ModelForm):
     name_ue = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_pl = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_en = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     description_en = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
+                'class': 'span10',
                 'cols': 80,
                 'rows': 20
             }
@@ -32,16 +32,15 @@ class GalleryForm(forms.ModelForm):
     description_ue = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
-                'cols': 80,
-                'rows': 20
+                'class': 'span6',
+                'width': 20
             }
         )
     )
     description_pl = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
+                'class': 'span10',
                 'cols': 80,
                 'rows': 20
             }
@@ -49,7 +48,7 @@ class GalleryForm(forms.ModelForm):
     )
     author = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
 
@@ -62,17 +61,17 @@ class GalleryForm(forms.ModelForm):
 class PhotoForm(forms.ModelForm):
     name_ue = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_pl = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_en = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
 

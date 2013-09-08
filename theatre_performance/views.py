@@ -36,7 +36,7 @@ class PerformanceView(DetailView):
     template_name = 'performance.html'
 
 
-class PerformanceTimeView(DetailView):
+class PerformanceTimeDetailView(DetailView):
     ''' Single Performance Time '''
     model = PerformanceTime
     context_object_name = 'performance'

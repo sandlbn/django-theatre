@@ -3,7 +3,7 @@ __author__ = 'sandlbn'
 
 from django.conf.urls import patterns, url
 from .views import FrontPageView
-from .views import PerformanceView
+from .views import PerformanceTimeDetailView
 from .views import PerformanceList
 from .views import PerformanceBackendListView
 from .views import PerformanceCreateView
@@ -22,10 +22,20 @@ from .views import PerformanceDonorCreateView
 from .views import PerformanceDonorUpdateView
 from .views import PerformanceDonorDeleteView
 
+
+urlpatterns = patterns(
+    '.views',
+    url(
+        r'^performance,(?P<slug>[\w\d-]+)$',
+        PerformanceTimeDetailView.as_view(),
+        name='frontend-performance-time-detail'
+    ),
+)
+
 """
 Duplicated for a default view in backend
 """
-urlpatterns = patterns(
+urlpatterns += patterns(
     '.views',
     url(
         r'^backend/performance/list/$',
@@ -76,6 +86,11 @@ urlpatterns = patterns(
         r'^backend/performancetime/list/$',
         PerformanceTimeBackendListView.as_view(),
         name='backend-performance-time-list'
+    ),
+    url(
+        r'^backend/performancetime/list/(?P<performance_pk>\d)/$',
+        PerformanceTimeBackendListView.as_view(),
+        name='backend-performance-time-list-filtered'
     ),
     url(
         r'^backend/performancetime/create/$',

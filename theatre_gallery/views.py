@@ -14,6 +14,12 @@ from django.core.urlresolvers import reverse_lazy
 from theatre_core.utils.path import template_path
 
 
+class GalleryDetailView(DetailView):
+
+    model = Gallery
+    template_name = template_path(model, 'frontend', 'detail')
+
+
 class GalleryBackendListView(ListView):
 
     model = Gallery

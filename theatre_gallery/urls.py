@@ -11,8 +11,17 @@ from .views import PhotoCreateView
 from .views import PhotoUpdateView
 from .views import PhotoDeleteView
 
+from .views import GalleryDetailView
 
 urlpatterns = patterns(
+    '.view',
+    url(
+        r'^gallery,(?P<slug>[\w\d-]+)/$',
+        GalleryDetailView.as_view(),
+        name='frontend-galery-detail'
+    ),
+)
+urlpatterns += patterns(
     '.views',
     url(
         r'^backend/gallery/list/$',

@@ -37,17 +37,17 @@ class PerformanceGenreForm(forms.ModelForm):
     """
     name_ue = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_pl = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_en = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
 
@@ -62,23 +62,23 @@ class PerformanceForm(forms.ModelForm):
     """
     name_ue = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_pl = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     name_en = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'class': 'span8'}
+            attrs={'class': 'span10'}
         )
     )
     description_en = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
+                'class': 'span10',
                 'cols': 80,
                 'rows': 20
             }
@@ -87,7 +87,7 @@ class PerformanceForm(forms.ModelForm):
     description_ue = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
+                'class': 'span10',
                 'cols': 80,
                 'rows': 20
             }
@@ -96,7 +96,7 @@ class PerformanceForm(forms.ModelForm):
     description_pl = forms.CharField(
         widget=TinyMCE(
             attrs={
-                'class': 'span8',
+                'class': 'span10',
                 'cols': 80,
                 'rows': 20
             }
@@ -113,6 +113,11 @@ class PerformanceTimeForm(forms.ModelForm):
     """
     Modelform for Performance Time
     """
+    performance_date = forms.CharField(
+        widget=forms.widgets.TextInput(
+            attrs={'class': 'span10'}
+        )
+    )
     class Meta:
 
         exclude = ('slug',)

@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 from theatre_core.models import TimeStampedModel
 from easymode.i18n.decorators import I18n
 from django.template.defaultfilters import slugify
+from django.core.urlresolvers import reverse_lazy
 
 
 @I18n('name')
@@ -57,20 +58,20 @@ class PerformanceTime(TimeStampedModel):
     def save(self, *args, **kwargs):
         ''' create a slug string eg: performance,2012,23,12,19,00 '''
         if not self.id:
-            self.slug = slugify(
-                "{0},{1},{2},{3},{4},{5}".format(
-                    self.performance.name,
-                    self.performance_date.year,
-                    self.performance_date.month,
-                    self.performance_date.day,
-                    self.performance_date.hour,
-                    self.performance_date.min,
-                )
+            self.slug = "{0}__{1}".format(
+                slugify(self.performance.name),
+                self.performance_date.strftime("%d_%m_%Y__%H_%M")
             )
         super(PerformanceTime, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u'{0} {1}'.format(self.performance.name, self.performance_date)
+
+    def get_absolute_url(self):
+        return reverse_lazy(
+            'frontend-performance-time-detail',
+            args=[self.slug]
+        )
 
 
 @I18n('name')
