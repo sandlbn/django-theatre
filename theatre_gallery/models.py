@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.utils.text import slugify
 from easymode.i18n.decorators import I18n
 from theatre_core.models import TimeStampedModel
-from theatre_performace.models import Performance
+from theatre_performance.models import Performance
 
 
 @I18n('name')
