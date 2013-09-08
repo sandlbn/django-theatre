@@ -9,7 +9,7 @@ from theatre_core.models import TimeStampedModel
 from theatre_performance.models import Performance
 
 
-@I18n('name')
+@I18n('name', 'description')
 class Gallery(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_('Name'),
                             null=False, blank=False, unique=True)
@@ -40,6 +40,7 @@ class Picture(TimeStampedModel):
     description = models.TextField(verbose_name=_('Description'),
                                    blank=True)
     picture = models.ImageField(verbose_name=_('Photo'), upload_to='gallery')
+    gallery = models.ForeignKey(Gallery, verbose_name=_('Gallery'))
 
     def __unicode__(self):
         return self.name
