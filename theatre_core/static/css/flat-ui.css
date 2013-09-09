@@ -2734,6 +2734,9 @@ textarea[class*="span"] {
   padding-top: 5px;
   width: 50%;
 }
+.share-label a {
+    text-decoration: none;
+}
 .palette {
   color: #ffffff;
   margin: 0;
@@ -3815,7 +3818,7 @@ body.vjs-full-window {
 .mrl,
 .mhl,
 .mal {
-  margin-right: 20px;
+  margin-right: 0px;
 }
 .mbn,
 .mvn,

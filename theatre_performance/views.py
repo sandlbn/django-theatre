@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sandlbn'
 from .models import Performance
+from .models import PerformanceFrontPage
 from .models import PerformanceGenre
 from .models import PerformanceTime
 from .models import PerformanceDonor
+from theatre_news.models import News
 from .forms import PerformanceForm
 from .forms import PerformanceTimeForm
 from .forms import PerformanceDonorForm
@@ -17,20 +19,19 @@ from django.utils.datetime_safe import datetime
 from braces.views import StaffuserRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from theatre_core.utils.path import template_path
-from theatre_news.models import News
+
 
 class FrontPageView(ListView):
     ''' Start Page with promoted Performances '''
-    queryset = PerformanceTime.objects.filter(
-        published=True,
-        frontpage=True,
-        performance_date__gte=datetime.now()
+    queryset = PerformanceFrontPage.objects.filter(
     )
 
     def get_context_data(self, *args, **kwargs):
 
         context = super(FrontPageView, self).get_context_data(**kwargs)
-        context['news'] = News.objects.filter(published=True).order_by('-id')[:9]
+        context["performances"] = self.queryset
+        context['news'] = News.objects.filter(
+            published=True).order_by('-id')[:9]
         return context
     template_name = template_path(PerformanceTime, 'frontend', 'index')
 

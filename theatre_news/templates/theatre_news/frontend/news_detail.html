@@ -1,14 +1,36 @@
 {% extends 'theatre_core/frontend/base.html' %}
+{% load i18n %}
 
 {% block content %}
 <div class="row-fluid">
     <div class="span12">
         <h1>{{ object.name }}</h1>
-        <article>
+        <div class="article">
             {% autoescape off %}
             {{ object.long_text }}
             {% endautoescape %}
-        </article>
+        </div>
+    </div>
+    <div class="span12 pull-right">
+        <div class="share mrl">
+            <ul>
+                <li>
+                <label class="share-label" for="share-toggle2">
+                    <a href="#" class="btn btn-info" 
+                    onclick="window.open(
+                    'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                    'facebook-share-dialog', 
+                    'width=626,height=436');
+                    return false;">
+                    {% trans 'Share on Facebook' %}
+                </a>
+                <a href="https://twitter.com/share" class="btn btn-danger" data-via="teatrstary">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </li>
+                </label>
+
+            </ul>
+        </div>
     </div>
 </div>
 

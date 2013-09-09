@@ -29,14 +29,14 @@ class PerformanceGenre(TimeStampedModel):
 @I18n('name', 'description')
 class Performance(TimeStampedModel):
     '''Performance description '''
-    name = models.CharField(max_length=255, verbose_name=_(u'Name'),
-                            null=False, blank=False, unique=True)
-    description = models.TextField(verbose_name=_(u'Description'))
-    payroll = models.TextField(verbose_name=_(u'Payroll'))
     photo = models.ImageField(upload_to='performance/photo',
                               verbose_name=_(u'Photo')
                               )
     genre = models.ForeignKey(PerformanceGenre)
+    name = models.CharField(max_length=255, verbose_name=_(u'Name'),
+                            null=False, blank=False, unique=True)
+    description = models.TextField(verbose_name=_(u'Description'))
+    payroll = models.TextField(verbose_name=_(u'Payroll'))
     slug = models.SlugField(verbose_name=_(u'Slug'))
 
     def save(self, *args, **kwargs):
@@ -54,10 +54,11 @@ class PerformanceTime(TimeStampedModel):
                                     verbose_name=_(u'Performance'))
     performance_date = models.DateField(verbose_name=_(u'Date'))
     performance_time = models.TimeField(verbose_name=_(u'Time'))
-    event_of_month = models.BooleanField(verbose_name=_(u'Event of month ?'))
-    slug = models.SlugField(verbose_name=_(u'Slug'))
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
-    frontpage = models.BooleanField(verbose_name=_(u'On FrontPage ?'))
+    event_of_month = models.BooleanField(verbose_name=_(u'Event of month ?'))
+    program_id = models.IntegerField(max_length='5',
+                                     verbose_name=_('System number'))
+    slug = models.SlugField(verbose_name=_(u'Slug'))
 
     def save(self, *args, **kwargs):
         ''' create a slug string eg: performance,2012,23,12,19,00 '''

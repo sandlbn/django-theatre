@@ -64,7 +64,7 @@ margin: 5px 0 5px 0;
 }
 
 .navbar .brand {
-	padding: 19px 20px 0px;
+	padding: 0px 20px 0px;
 }
 
 
@@ -130,7 +130,10 @@ line-height: 15px;
 
 }
 .article {
-    margin-left: 2px;
+    margin: 30px 5px 30px 5px;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: justify; text-justify: newspaper;
 }
 .genre_list {
     font-family: Lato;
@@ -149,22 +152,20 @@ background-color: rgba(45, 44, 44, 0.3);
 padding: 10px;
 font-size: 16px;
 line-height: 16px;
-
 }
 p {
-
- text-align: justify; text-justify: newspaper;
- padding: 5px;
- color: #000;
+    text-align: justify; text-justify: newspaper;
+    color: #000;
+}
+.news_list {
+    padding: 5px;
 }
 .medias img {
 width:100%;
 }
-#logo {
-    padding-top: 0px;
 
-}
 
 strong {
-    font-weight: 400;
+    font-weight: 300;
 }
+
