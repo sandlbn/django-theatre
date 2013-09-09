@@ -12,6 +12,9 @@ from django.core.urlresolvers import reverse_lazy
 class PerformanceGenre(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                             null=False, blank=False, unique=True)
+    css_class = models.CharField(max_length=255,
+                                 verbose_name=_(u'CSS class name'),
+                                 null=False, blank=False, unique=True)
     slug = models.SlugField(verbose_name=_(u'Slug'))
 
     def save(self, *args, **kwargs):
@@ -49,7 +52,8 @@ class PerformanceTime(TimeStampedModel):
     '''Performance Schedule '''
     performance = models.ForeignKey(Performance,
                                     verbose_name=_(u'Performance'))
-    performance_date = models.DateTimeField(verbose_name=_(u'Time'))
+    performance_date = models.DateField(verbose_name=_(u'Date'))
+    performance_time = models.TimeField(verbose_name=_(u'Time'))
     event_of_month = models.BooleanField(verbose_name=_(u'Event of month ?'))
     slug = models.SlugField(verbose_name=_(u'Slug'))
     published = models.BooleanField(verbose_name=_(u'Is Published ?'))
@@ -58,14 +62,23 @@ class PerformanceTime(TimeStampedModel):
     def save(self, *args, **kwargs):
         ''' create a slug string eg: performance,2012,23,12,19,00 '''
         if not self.id:
-            self.slug = "{0}__{1}".format(
+            self.slug = "{0}__{1}__{2}".format(
                 slugify(self.performance.name),
-                self.performance_date.strftime("%d_%m_%Y__%H_%M")
+                self.performance_date.strftime("%d_%m_%Y"),
+                self.performance_time.strftime("%H_%M")
             )
         super(PerformanceTime, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return u'{0} {1}'.format(self.performance.name, self.performance_date)
+
+    @property
+    def performance_date_str(self):
+        return self.performance_date.strftime("%d-%m-%Y")
+
+    @property
+    def performance_time_str(self):
+        return self.performance_date.strftime("%H:%M")
 
     def get_absolute_url(self):
         return reverse_lazy(
@@ -86,3 +99,13 @@ class PerformanceDonor(TimeStampedModel):
 
     def __unicode__(self):
         return self.name
+
+
+class PerformanceFrontPage(TimeStampedModel):
+    span_width = models.IntegerField(
+        max_length=2, verbose_name=_(u'Span Width'), null=False, blank=False)
+    preformance_time = models.ForeignKey(PerformanceTime,
+                                         null=True, blank=True)
+
+    def __unicode__(self):
+        return self.performance_time.performance.name

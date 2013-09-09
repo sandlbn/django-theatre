@@ -796,8 +796,8 @@ h6 {
 }
 .navbar .nav > li > a {
   color: #526476;
-  font-weight: 700;
-  font-size: 14.994px;
+  font-weight: 600;
+  font-size: 17.994px;
   /* 15px */
 
   padding: 29px 20px 27px;
@@ -829,6 +829,7 @@ h6 {
   -webkit-border-radius: 0 0 0 6px;
   -moz-border-radius: 0 0 0 6px;
   border-radius: 0 0 0 6px;
+  padding-left: 0px;
 }
 .navbar .nav ul {
   border-radius: 4px;

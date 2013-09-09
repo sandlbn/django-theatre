@@ -17,7 +17,7 @@ from django.utils.datetime_safe import datetime
 from braces.views import StaffuserRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from theatre_core.utils.path import template_path
-
+from theatre_news.models import News
 
 class FrontPageView(ListView):
     ''' Start Page with promoted Performances '''
@@ -26,7 +26,13 @@ class FrontPageView(ListView):
         frontpage=True,
         performance_date__gte=datetime.now()
     )
-    template_name = 'index.html'
+
+    def get_context_data(self, *args, **kwargs):
+
+        context = super(FrontPageView, self).get_context_data(**kwargs)
+        context['news'] = News.objects.filter(published=True).order_by('-id')[:9]
+        return context
+    template_name = template_path(PerformanceTime, 'frontend', 'index')
 
 
 class PerformanceView(DetailView):

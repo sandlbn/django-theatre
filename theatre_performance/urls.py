@@ -30,6 +30,11 @@ urlpatterns = patterns(
         PerformanceTimeDetailView.as_view(),
         name='frontend-performance-time-detail'
     ),
+    url(
+        r'^$',
+        FrontPageView.as_view(),
+        name='frontend-site-index'
+    ),
 )
 
 """

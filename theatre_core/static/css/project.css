@@ -54,9 +54,6 @@ max-width: 80px;
 background-color: #ccc;
 height: 310px;
 }
-.navbar .nav>li>a {
-font-weight: 300;
-}
 a>legend {
 font-size: 12px;
 line-height: 12px;
@@ -70,9 +67,6 @@ margin: 5px 0 5px 0;
 	padding: 19px 20px 0px;
 }
 
-.navbar {
-	margin-bottom: 0px;
-}
 
 .img-front {
 	max-height: 300px;
@@ -106,29 +100,22 @@ position: absolute;
 color: #000;
 z-index: 9;
 height: 30px;
-width: 265px;
 background-color: rgba(255, 255, 255, 0.5);
 background-repeat: no-repeat;
 background-position: top left;
 background-image: url('/media/img/slash_first.png');
+display: block;
 }
 
-.featured-wrapper-down {
+.featured-wrapper-4 {
 
-margin: 0px;
-width: 274px;
-}
-.featured-wrapper-right {
-
-margin: 0px 5px 5px 25px;
-width: 275px;
+width: 299px;
 
 }
 
-.featured-wrapper-left {
+.featured-wrapper-7 {
 
-margin: 0px 5px 5px 0px;
-width: 460px;
+width: 540px;
 
 }
 .featured-wrapper p {
@@ -157,13 +144,11 @@ font-weight: 300;
 }
 h3 {
 
-
-}
-h3 {
-
+text-align: center;
 background-color: rgba(45, 44, 44, 0.3);
-padding: 5px;
-font-size: 20px;
+padding: 10px;
+font-size: 16px;
+line-height: 16px;
 
 }
 p {
@@ -179,6 +164,7 @@ width:100%;
     padding-top: 0px;
 
 }
-button {
-    font-family: Lato;
+
+strong {
+    font-weight: 400;
 }
