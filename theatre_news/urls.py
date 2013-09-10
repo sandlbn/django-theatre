@@ -20,12 +20,12 @@ urlpatterns = patterns(
     url(
         r'^news,(?P<slug>[\w\d-]+)/$',
         NewsDetailView.as_view(),
-        name='news-detail'
+        name='frontend-news-detail'
     ),
     url(
         r'^page,(?P<slug>[\w\d-]+)/$',
         StaticPageDetailView.as_view(),
-        name='static-detail'
+        name='frontend-static-page-detail'
     )
 )
 

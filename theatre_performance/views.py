@@ -30,6 +30,7 @@ class FrontPageView(ListView):
 
         context = super(FrontPageView, self).get_context_data(**kwargs)
         context["performances"] = self.queryset
+        print self.queryset.count()
         context['news'] = News.objects.filter(
             published=True).order_by('-id')[:9]
         return context
@@ -47,7 +48,7 @@ class PerformanceTimeDetailView(DetailView):
     ''' Single Performance Time '''
     model = PerformanceTime
     context_object_name = 'performance'
-    template_name = 'performance_time_detail.html'
+    template_name = template_path(PerformanceTime, 'frontend', 'detail')
 
 
 class PerformanceList(ListView):

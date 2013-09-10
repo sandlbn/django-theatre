@@ -107,6 +107,9 @@ class PerformanceFrontPage(TimeStampedModel):
         max_length=2, verbose_name=_(u'Span Width'), null=False, blank=False)
     preformance_time = models.ForeignKey(PerformanceTime,
                                          null=True, blank=True)
+    photo = models.ImageField(upload_to='frontend/photo',
+                              verbose_name=_(u'Photo')
+                              )
 
     def __unicode__(self):
         return self.performance_time.performance.name

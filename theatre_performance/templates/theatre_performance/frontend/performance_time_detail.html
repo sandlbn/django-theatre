@@ -1,0 +1,67 @@
+{% extends 'theatre_core/frontend/base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="row-fluid">
+    <div class="span6 article_performance">
+    <h1>{{ object.performance.name }}</h1>
+        <p>
+        {% autoescape off %}
+        {{ object.performance.description|linebreaksbr }}
+        {% endautoescape %}
+
+</p>
+        <div class="share mrl">
+            <ul>
+                <li>
+                <label for="share-toggle2">
+                    <a href="#" class="btn btn-info" 
+                    onclick="window.open(
+                    'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                    'facebook-share-dialog', 
+                    'width=626,height=436');
+                    return false;">
+                    {% trans 'Share on Facebook' %}
+                </a>
+                <a href="https://twitter.com/share" class="btn btn-danger" data-via="teatrstary">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </li>
+                </label>
+
+            </ul>
+        </div>
+</div>
+<div class="span6 medias">
+<img src="/media/img/dyptyk_sklejka.jpg" class="thumbnail"/>
+<p class="teatr_performance {{ object.performance.genre.css_class }}">
+{{ object.performance.genre.name|upper	 }}<br/>
+{{ object.performance_date|date:"Y-m-d"|upper }} 
+/
+{{ object.performance_time|date:"H:i"|upper }} 
+/
+{{ object.performance_date|date:"l"|upper }}<br/>
+<br/>
+
+</p>
+<p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
+{{ object.performance.payroll|linebreaksbr }}
+</p>
+<p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
+<b>{% trans 'SPONSORS' %}</b><br/>
+<div class="row-fluid">
+<div class="thumbnail span2 donator">
+<img src="/media/img/donator/pge_4.png">
+</div>
+<div class="span1"></div>
+<div class="thumbnail span2 donator">
+<img src="/media/img/donator/rl.png">
+</div>
+<div class="span1"></div>
+<div class="thumbnail span2 donator">
+<img src="/media/img/donator/tvpkultra.png">
+</div>
+<div class="span1"></div>
+</div>
+</p>
+</div>
+</div>
+{% endblock %}

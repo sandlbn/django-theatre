@@ -11,17 +11,17 @@
 </div>
 <div class="span5 medias">
 <img src="/media/img/dyptyk_sklejka.jpg" class="thumbnail"/>
-<p class="teatr_performance">
+<p class="teatr_performance {{ object.performance.genre.css_name }}">
 {{ object.performance.genre.name|upper	 }}<br/>
 {{ object.performance_date|date:"Y-m-d / H:m / F"|upper }}<br/>
 
 <br/>
 
 </p>
-<p class="teatr_performance_payroll">
+<p class="teatr_performance_payroll {{ object.performance.genre.css_name }}">
 <b>SKŁAD:</b><br/>{{ object.performance.payroll|linebreaksbr }}
 </p>
-<p class="teatr_performance_payroll">
+<p class="teatr_performance_payroll {{ object.performance.genre.css_name }}">
 <b>SPONSORZY:</b><br/>
 <div class="row-fluid">
 <div class="thumbnail span4 donator">

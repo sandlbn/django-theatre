@@ -22,7 +22,7 @@ class StaticPage(TimeStampedModel):
         super(StaticPage, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('static-detail', args=[self.slug])
+        return reverse('frontend-static-page-detail', args=[self.slug])
 
     def __unicode__(self):
         return self.name
@@ -44,7 +44,7 @@ class News(TimeStampedModel):
         super(News, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('news-detail', args=[self.slug])
+        return reverse('frontend-news-detail', args=[self.slug])
 
     def __unicode__(self):
         return self.name
