@@ -31,6 +31,11 @@ urlpatterns = patterns(
         name='frontend-performance-time-detail'
     ),
     url(
+        r'^performances,callendar/$',
+        PerformanceList.as_view(),
+        name='frontend-performance-calendar'
+    ),
+    url(
         r'^$',
         FrontPageView.as_view(),
         name='frontend-site-index'

@@ -31,7 +31,7 @@
         </div>
 </div>
 <div class="span6 medias">
-<img src="/media/img/dyptyk_sklejka.jpg" class="thumbnail"/>
+<img src="{{ object.performance.photo.url }}" class="thumbnail"/>
 <p class="teatr_performance {{ object.performance.genre.css_class }}">
 {{ object.performance.genre.name|upper	 }}<br/>
 {{ object.performance_date|date:"Y-m-d"|upper }} 

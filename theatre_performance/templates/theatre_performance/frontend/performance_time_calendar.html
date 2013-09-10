@@ -1,0 +1,29 @@
+{% extends 'theatre_core/frontend/base.html' %}
+{% load i18n %}
+{% load bootstrap_calendar %}
+{% load url from future %} 
+{% block content %}
+<div class="row-fluid">
+    <div class="span6">
+        <a class="month calendar_year article"/> </a>
+    </div>
+    <div class="span6 pagination-right">
+    {% bootstrap_controls '' %}
+</div>
+<div class="span12"></div>
+
+</div>
+<div class="row-fluid">
+    {% bootstrap_calendar 'span10' %}
+</div>
+<div class="row-fluid">
+<div class="span12"></div>
+    <div class="span12 pagination-right">
+    {% bootstrap_controls '' %}
+</div>
+{% endblock %}
+
+{% block javascript_user %}
+{% bootstrap_calendar_js language="pl-PL" %}
+{% bootstrap_calendar_init language="pl-PL" %}
+{% endblock %}

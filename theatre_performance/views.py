@@ -15,6 +15,7 @@ from django.views.generic import DetailView
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
+from django.views.generic import TemplateView
 from django.utils.datetime_safe import datetime
 from braces.views import StaffuserRequiredMixin
 from django.core.urlresolvers import reverse_lazy
@@ -51,13 +52,10 @@ class PerformanceTimeDetailView(DetailView):
     template_name = template_path(PerformanceTime, 'frontend', 'detail')
 
 
-class PerformanceList(ListView):
+class PerformanceList(TemplateView):
     ''' Start Page with listed Performances '''
 
-    queryset = PerformanceTime.objects.filter(
-        published=True,
-    )
-    template_name = 'theatre_performance/performance_list_calendar.html'
+    template_name = 'theatre_performance/frontend/performance_time_calendar.html'
 
 
 class PerformanceBackendListView(ListView):

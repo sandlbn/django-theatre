@@ -22,6 +22,7 @@
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'css/flat-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/calendar.css' %}" rel="stylesheet">
     {% endblock %}
 
     {% block angular %}
@@ -39,7 +40,7 @@
 						<div class="container">
 							<div class="nav-collapse collapse">
 								<ul class="nav">
-									<li><a href="/calendar">REPERTUAR</a></li>
+									<li><a href="{% url 'frontend-performance-calendar' %}">REPERTUAR</a></li>
                                     <li><a href="{% url 'frontend-static-page-detail' 'o-teatrze' %}">O TEATRZE</a></li>
                                     <li><a href="{% url 'frontend-static-page-detail' 'kontakt' %}">KONTAKT</a></li>
 										<ul class="dropdown-menu">
@@ -112,7 +113,9 @@ var js, fjs = d.getElementsByTagName(s)[0];
       <!-- Your stuff: Third-party javascript libraries go here -->
 
       <!-- place project specific Javascript in this file -->
-      <script src="{% static 'js/project.js' %}"></script>
+      <script src="{% static 'js/underscore-min.js' %}"></script>
     {% endblock javascript %}
+    {% block javascript_user %}
+    {% endblock %}
   </body>
 </html>
