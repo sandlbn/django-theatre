@@ -62,6 +62,23 @@
 <div class="span1"></div>
 </div>
 </p>
+<p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
+<b>GALERIA</b>
+{% if object.performance.gallery_set %}
+{% for photos in object.performance.gallery_set.all %}
+{% for photo in photos.photo_set.all %}
+<div class="span3">
+    <a class="thumbnail" href="{{photo.picture.url}}" data-lightbox ><img src="{{photo.picture.url}}"></a>
 </div>
+{% endfor %}
+{% endfor %}
 </div>
+</p>
+{% endif %}
+</div
+{% endblock %}
+{% block javascript_user %}
+<script>
+$('[data-lightbox]').simpleLightbox();
+</script>
 {% endblock %}

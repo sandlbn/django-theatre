@@ -20,9 +20,13 @@
 
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    {% comment %}
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+    {% endcomment %}
     <link href="{% static 'css/flat-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     <link href="{% static 'css/calendar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-lightbox.min.css' %}" rel="stylesheet">
     {% endblock %}
 
     {% block angular %}
@@ -46,7 +50,7 @@
 										<ul class="dropdown-menu">
 											<li><a href="">NOWE KONTO</a></li>
 										</ul></li>
-                                    <li><a href="/">GALERIA</a></li>
+									<li><a href="{% url 'frontend-gallery-list' %}">GALERIA</a></li>
 									<li><a href="{% url 'frontend-static-page-detail' 'kontakt' %}">LIVE</a></li>
 									<li class="dropdown"><a class="dropdown-toggle"
 										data-toggle="dropdown"> ZALOGUJ <b class="caret"></b>
@@ -114,6 +118,7 @@ var js, fjs = d.getElementsByTagName(s)[0];
 
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/underscore-min.js' %}"></script>
+      <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
     {% endblock javascript %}
     {% block javascript_user %}
     {% endblock %}

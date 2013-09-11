@@ -30,7 +30,7 @@ class Gallery(TimeStampedModel):
         super(Gallery, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('frontend-galery-detail', args=[self.slug])
+        return reverse('frontend-gallery-detail', args=[self.slug])
 
 
 @I18n('name')

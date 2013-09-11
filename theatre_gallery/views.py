@@ -14,10 +14,37 @@ from django.core.urlresolvers import reverse_lazy
 from theatre_core.utils.path import template_path
 
 
+class GalleryListView(ListView):
+
+    model = Gallery
+    queryset = model.objects.filter(
+        published=True,
+    ).order_by('-id')
+
+    template_name = template_path(model, 'frontend', 'list')
+
+
 class GalleryDetailView(DetailView):
 
     model = Gallery
     template_name = template_path(model, 'frontend', 'detail')
+
+    def get_object(self):
+
+        return self.model.objects.get(slug=self.kwargs['slug'])
+
+    def get_context_data(self, *args, **kwargs):
+
+        context = super(
+            GalleryDetailView,
+            self
+        ).get_context_data(*args, **kwargs)
+        gallery = self.get_object()
+        photos = Photo.objects.filter(gallery=gallery)
+        context['photos'] = photos
+        return context
+
+
 
 
 class GalleryBackendListView(ListView):
