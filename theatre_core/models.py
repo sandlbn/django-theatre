@@ -2,8 +2,8 @@
 __author__ = 'sandlbn'
 from django.db import models
 from django.utils.translation import ugettext as _
-from django.utils import timezone
 from easymode.i18n.decorators import I18n
+from django.contrib.sites.models import get_current_site
 
 
 class TimeStampedModel(models.Model):
@@ -28,6 +28,17 @@ class MenuTop(TimeStampedModel):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+
+        request = None
+        return ''.join(
+            [
+                'http://',
+                get_current_site(request).domain,
+                self.link
+            ]
+        )
 
 
 @I18n('name')
