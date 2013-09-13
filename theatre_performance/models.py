@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 __author__ = 'sandlbn'
 from django.db import models
+from django.db.models.signals import post_delete
+from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
 from theatre_core.models import TimeStampedModel
 from easymode.i18n.decorators import I18n
@@ -61,7 +63,7 @@ class PerformanceTime(TimeStampedModel):
     slug = models.SlugField(verbose_name=_(u'Slug'))
 
     def save(self, *args, **kwargs):
-        ''' create a slug string eg: performance,2012,23,12,19,00 '''
+        ''' create a slug string eg: performance__2012_23_12__19_00 '''
         if not self.id:
             self.slug = "{0}__{1}__{2}".format(
                 slugify(self.performance.name),
@@ -107,6 +109,7 @@ class PerformanceFrontPage(TimeStampedModel):
         max_length=2, verbose_name=_(u'Span Width'), null=False, blank=False)
     preformance_time = models.ForeignKey(PerformanceTime,
                                          null=True, blank=True)
+    short_description = models.TextField(verbose_name=_('Short Description'))
     photo = models.ImageField(upload_to='frontend/photo',
                               verbose_name=_(u'Photo')
                               )

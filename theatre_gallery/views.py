@@ -39,12 +39,11 @@ class GalleryDetailView(DetailView):
             GalleryDetailView,
             self
         ).get_context_data(*args, **kwargs)
+
         gallery = self.get_object()
         photos = Photo.objects.filter(gallery=gallery)
         context['photos'] = photos
         return context
-
-
 
 
 class GalleryBackendListView(ListView):

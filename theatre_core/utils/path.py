@@ -33,4 +33,5 @@ def template_path(cls, view, prefix):
         file_name = '{0}_{1}.html'.format(cls_name, prefix)
         return path.join(app_name, view, file_name)
     else:
-        raise ValueError
+        raise ValueError('cls value must be a ModelBase \
+                         instance, view value must be a String')
