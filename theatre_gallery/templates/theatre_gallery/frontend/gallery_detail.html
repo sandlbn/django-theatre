@@ -1,0 +1,27 @@
+{% extends 'theatre_core/frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}List Record{% endblocktrans %}{% endblock %}
+{% block content %}
+<div class="row-fluid">
+    <div class="article">{{ object.name|upper }}</div>
+</div>
+<div class="row">
+{% for photo in photos %}
+{% if forloop.counter0|divisibleby:"4" %}
+</div><div class="row">
+{% endif %}
+<div class="span3">
+    <a href="{{ photo.picture.url }}" data-lightbox class="thumbnail">
+        <img src="{{ photo.picture.url }}"/>
+    </a>
+        <label>{{ photo.description }} </label>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+{% block javascript_user %}
+<script>
+$('[data-lightbox]').simpleLightbox();
+</script>
+{% endblock %}

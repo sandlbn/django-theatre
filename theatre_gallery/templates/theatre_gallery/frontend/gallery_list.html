@@ -1,0 +1,24 @@
+{% extends 'theatre_core/frontend/base.html' %}
+{% load i18n %}
+
+{% block title %}{% blocktrans %}List Record{% endblocktrans %}{% endblock %}
+{% block content %}
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="article">{% trans 'GALLERY' %}</div>
+    </div>
+</div>
+{% for object in object_list %}
+<div class="row-fluid">
+    <div class="span10">
+        <div class="article"><a href="{{object.get_absolute_url }}">{{ object.name|upper }}</a><br/>{{object.description}} </div>
+    </div>
+    <div class="span2">
+        {{ object.author }}
+    </div>
+    <div class="span12"> <hr/></div>
+</div>
+{% endfor %}
+
+{% endblock %}
