@@ -42,12 +42,12 @@ urlpatterns += patterns(
         name='backend-static-create'
     ),
     url(
-        r'^backend/static/update/(?P<pk>\d)/$',
+        r'^backend/static/update/(?P<pk>\d+)/$',
         StaticPageUpdateView.as_view(),
         name='backend-static-update'
     ),
     url(
-        r'^backend/static/delete/(?P<pk>\d)/$',
+        r'^backend/static/delete/(?P<pk>\d+)/$',
         StaticPageDeleteView.as_view(),
         name='backend-static-delete'
     ),
@@ -62,12 +62,12 @@ urlpatterns += patterns(
         name='backend-news-create'
     ),
     url(
-        r'^backend/news/update/(?P<pk>\d)/$',
+        r'^backend/news/update/(?P<pk>\d+)/$',
         NewsUpdateView.as_view(),
         name='backend-news-update'
     ),
     url(
-        r'^backend/news/delete/(?P<pk>\d)/$',
+        r'^backend/news/delete/(?P<pk>\d+)/$',
         NewsDeleteView.as_view(),
         name='backend-news-delete'
     ),

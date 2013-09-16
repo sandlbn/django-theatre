@@ -31,7 +31,6 @@ class FrontPageView(ListView):
 
         context = super(FrontPageView, self).get_context_data(**kwargs)
         context["performances"] = self.queryset
-        print self.queryset.count()
         context['news'] = News.objects.filter(
             published=True).order_by('-id')[:9]
         return context
@@ -55,7 +54,7 @@ class PerformanceTimeDetailView(DetailView):
 class PerformanceList(TemplateView):
     ''' Start Page with listed Performances '''
 
-    template_name = 'theatre_performance/frontend/performance_time_calendar.html'
+    template_name = template_path(Performance, 'frontend', 'time_calendar')
 
 
 class PerformanceBackendListView(ListView):
@@ -86,12 +85,6 @@ class PerformanceDeleteView(DeleteView, StaffuserRequiredMixin):
     model = Performance
     success_url = reverse_lazy('backend-performance-list')
     template_name = template_path(Performance, 'backend', 'confirm_delete')
-
-
-class PerformanceListBackendView(ListView, StaffuserRequiredMixin):
-
-    model = Performance
-    template_name = template_path(Performance, 'backend', 'list')
 
 
 class PerformanceGenreBackendListView(ListView):

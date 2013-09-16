@@ -24,7 +24,7 @@ from .views import PerformanceDonorDeleteView
 
 
 urlpatterns = patterns(
-    '.views',
+    'theatre_performance.views',
     url(
         r'^performance,(?P<slug>[\w\d-]+)$',
         PerformanceTimeDetailView.as_view(),
@@ -40,13 +40,6 @@ urlpatterns = patterns(
         FrontPageView.as_view(),
         name='frontend-site-index'
     ),
-)
-
-"""
-Duplicated for a default view in backend
-"""
-urlpatterns += patterns(
-    '.views',
     url(
         r'^backend/performance/list/$',
         PerformanceBackendListView.as_view(),
@@ -63,12 +56,12 @@ urlpatterns += patterns(
         name='backend-performance-create'
     ),
     url(
-        r'^backend/performance/update/(?P<pk>\d)/$',
+        r'^backend/performance/update/(?P<pk>\d+)/$',
         PerformanceUpdateView.as_view(),
         name='backend-performance-update'
     ),
     url(
-        r'^backend/performance/delete/(?P<pk>\d)/$',
+        r'^backend/performance/delete/(?P<pk>\d+)/$',
         PerformanceDeleteView.as_view(),
         name='backend-performance-delete'
     ),
@@ -83,12 +76,12 @@ urlpatterns += patterns(
         name='backend-performance-genre-create'
     ),
     url(
-        r'^backend/performancegenre/update/(?P<pk>\d)/$',
+        r'^backend/performancegenre/update/(?P<pk>\d+)/$',
         PerformanceGenreUpdateView.as_view(),
         name='backend-performance-genre-update'
     ),
     url(
-        r'^backend/performancegenre/delete/(?P<pk>\d)/$',
+        r'^backend/performancegenre/delete/(?P<pk>\d+)/$',
         PerformanceGenreDeleteView.as_view(),
         name='backend-performance-genre-delete'
     ),
@@ -98,9 +91,9 @@ urlpatterns += patterns(
         name='backend-performance-time-list'
     ),
     url(
-        r'^backend/performancetime/list/(?P<performance_pk>\d)/$',
+        r'^backend/performancetime/list/(?P<performance_pk>\d+)/$',
         PerformanceTimeBackendListView.as_view(),
-        name='backend-performance-time-list-filtered'
+        name='backend-performance-time-list'
     ),
     url(
         r'^backend/performancetime/create/$',
@@ -108,12 +101,12 @@ urlpatterns += patterns(
         name='backend-performance-time-create'
     ),
     url(
-        r'^backend/performancetime/update/(?P<pk>\d)/$',
+        r'^backend/performancetime/update/(?P<pk>\d+)/$',
         PerformanceTimeUpdateView.as_view(),
         name='backend-performance-time-update'
     ),
     url(
-        r'^backend/performancetime/delete/(?P<pk>\d)/$',
+        r'^backend/performancetime/delete/(?P<pk>\d+)/$',
         PerformanceTimeDeleteView.as_view(),
         name='backend-performance-time-delete'
     ),
@@ -128,12 +121,12 @@ urlpatterns += patterns(
         name='backend-performance-donor-create'
     ),
     url(
-        r'^backend/performancedonor/update/(?P<pk>\d)/$',
+        r'^backend/performancedonor/update/(?P<pk>\d+)/$',
         PerformanceDonorUpdateView.as_view(),
         name='backend-performance-donor-update'
     ),
     url(
-        r'^backend/performancedonor/delete/(?P<pk>\d)/$',
+        r'^backend/performancedonor/delete/(?P<pk>\d+)/$',
         PerformanceDonorDeleteView.as_view(),
         name='backend-performance-donor-delete'
     ),

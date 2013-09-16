@@ -40,32 +40,32 @@ urlpatterns += patterns(
         name='backend-gallery-create'
     ),
     url(
-        r'^backend/gallery/update/(?P<pk>\d)/$',
+        r'^backend/gallery/update/(?P<pk>\d+)/$',
         GalleryUpdateView.as_view(),
         name='backend-gallery-update'
     ),
     url(
-        r'^backend/gallery/delete/(?P<pk>\d)/$',
+        r'^backend/gallery/delete/(?P<pk>\d+)/$',
         GalleryDeleteView.as_view(),
         name='backend-gallery-delete'
     ),
     url(
-        r'^backend/photo/list/(?P<gallery_pk>\d)/$',
+        r'^backend/photo/list/(?P<gallery_pk>\d+)/$',
         PhotoBackendListView.as_view(),
         name='backend-photo-list'
     ),
     url(
-        r'^backend/photo/create/(?P<gallery_pk>\d)/$',
+        r'^backend/photo/create/(?P<gallery_pk>\d+)/$',
         PhotoCreateView.as_view(),
         name='backend-photo-create'
     ),
     url(
-        r'^backend/photo/update/(?P<pk>\d)/$',
+        r'^backend/photo/update/(?P<pk>\d+)/$',
         PhotoUpdateView.as_view(),
         name='backend-photo-update'
     ),
     url(
-        r'^backend/photo/delete/(?P<pk>\d)/$',
+        r'^backend/photo/delete/(?P<pk>\d+)/$',
         PhotoDeleteView.as_view(),
         name='backend-photo-delete'
     ),
