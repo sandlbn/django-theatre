@@ -25,6 +25,7 @@ class MenuTop(TimeStampedModel):
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
                             null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
+    parent = models.ForeignKey('self', verbose_name=u'Parent Model')
 
     def __unicode__(self):
         return self.name
@@ -48,6 +49,7 @@ class MenuBottom(TimeStampedModel):
     link = models.CharField(max_length=255, verbose_name=_(u'Link'),
                             null=False, blank=False)
     position = models.IntegerField(verbose_name=_('Position'))
+    parent = models.ForeignKey('self', verbose_name=u'Parent Model')
 
     def __unicode__(self):
         return self.name

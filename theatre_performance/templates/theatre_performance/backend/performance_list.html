@@ -23,8 +23,8 @@
         <td>{{object.id}}</td>
         <td>{{object.name}}</td>
         <td>{{object.genre}}</td>
-        <td><a class="btn btn-info" href="{% url 'backend-performance-time-list' object.pk %}">
-                <i class="icon-minus-sign"> </i> {% trans 'Edit' %}</a></td>
+        <td><a class="btn btn-info" href="{% url 'backend-performance-time-list' object.id %}">
+                <i class="icon-minus-sign"> </i> {% trans 'List Events' %}</a></td>
         <td><a class="btn btn-info" href="{% url 'backend-performance-update' object.id %}">
                 <i class="icon-minus-sign"> </i> {% trans 'Edit' %}</a></td>
         <td><a class="btn btn-warning" href="{% url 'backend-performance-delete' object.id %}">
