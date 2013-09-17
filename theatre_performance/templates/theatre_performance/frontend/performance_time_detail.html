@@ -41,9 +41,21 @@
 {{ object.performance_date|date:"l"|upper }}<br/>
 <br/>
 
-</p>
-<p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
 {{ object.performance.payroll|linebreaksbr }}
+
+{% if object.performance.gallery_set.all %}
+<br/>
+<b>GALERIA</b>
+<div class="row-fluid theatre_text">
+{% for photos in object.performance.gallery_set.all %}
+{% for photo in photos.photo_set.all %}
+<div class="span3">
+    <a class="thumbnail" href="{{photo.picture.url}}" data-lightbox ><img src="{{photo.picture.url}}"></a>
+</div>
+{% endfor %}
+{% endfor %}
+</div>
+{% endif %}
 </p>
 <p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
 <b>{% trans 'SPONSORS' %}</b><br/>
@@ -62,20 +74,6 @@
 <div class="span1"></div>
 </div>
 </p>
-<p class="teatr_performance_payroll {{ object.performance.genre.css_class }}">
-<b>GALERIA</b>
-{% if object.performance.gallery_set %}
-{% for photos in object.performance.gallery_set.all %}
-{% for photo in photos.photo_set.all %}
-<div class="span3">
-    <a class="thumbnail" href="{{photo.picture.url}}" data-lightbox ><img src="{{photo.picture.url}}"></a>
-</div>
-{% endfor %}
-{% endfor %}
-</div>
-</p>
-{% endif %}
-</div
 {% endblock %}
 {% block javascript_user %}
 <script>

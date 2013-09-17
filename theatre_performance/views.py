@@ -32,7 +32,7 @@ class FrontPageView(ListView):
         context = super(FrontPageView, self).get_context_data(**kwargs)
         context["performances"] = self.queryset
         context['news'] = News.objects.filter(
-            published=True).order_by('-id')[:9]
+            published=True).order_by('-id')[:3]
         return context
     template_name = template_path(PerformanceTime, 'frontend', 'index')
 

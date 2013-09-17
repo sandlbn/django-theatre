@@ -27,6 +27,27 @@
 	magrgin: 0px auto 0 auto;
 }
 
+.music_text {
+    font-size: 18px;
+	color: rgb(237, 178, 31);
+}
+
+.movie_text {
+    font-size: 18px;
+	color: rgb(258,32,56);
+}
+.meetings_text {
+    font-size: 18px;
+	color: rgb(0,85,155);
+}
+.education_text {
+    font-size: 18px;
+    color: rgb(177,97,17);
+}
+.theatre_text {
+    font-size: 18px;
+	color: rgb(0,126,122);
+}
 .teatr_performance {
 font-family:Lato;
 font-size: 20px;
@@ -112,6 +133,7 @@ position: absolute;
 color: #000;
 z-index: 9;
 height: 30px;
+min-width: 30px;
 background-color: rgba(255, 255, 255, 0.5);
 background-repeat: no-repeat;
 background-position: top left;

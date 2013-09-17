@@ -1,7 +1,7 @@
 {% extends 'theatre_core/frontend/base.html' %}
 {% load i18n %}
 
-{% block title %}{% blocktrans %}List Record{% endblocktrans %}{% endblock %}
+{% block title %}{% blocktrans %}GALLERY{% endblocktrans %}{% endblock %}
 {% block content %}
 
 <div class="row-fluid">
@@ -9,16 +9,20 @@
         <div class="article">{% trans 'GALLERY' %}</div>
     </div>
 </div>
+<div class="row">
 {% for object in object_list %}
-<div class="row-fluid">
-    <div class="span10">
-        <div class="article"><a href="{{object.get_absolute_url }}">{{ object.name|upper }}</a><br/>{{object.description}} </div>
-    </div>
-    <div class="span2">
-        {{ object.author }}
-    </div>
-    <div class="span12"> <hr/></div>
+{% if forloop.counter0|divisibleby:"4" %}
+</div><div class="row">
+{% endif %}
+<div class="span3">
+    <a href="{{object.get_absolute_url }}" data-lightbox class="thumbnail">
+        {{ object.photo_set.all|first }}
+    {% for photo  in object.photo_set.all|slice:"1" %}
+    <img src="{{photo.picture.url}}">
+    {% endfor %}
+    <label>{{ object.name|upper }}</label>
+    </a>
 </div>
 {% endfor %}
-
+</div>
 {% endblock %}
