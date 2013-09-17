@@ -1,0 +1,514 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-18 00:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: theatre_booking/models.py:8
+msgid "Chair system number"
+msgstr ""
+
+#: theatre_core/models.py:23 theatre_core/models.py:47
+#: theatre_gallery/models.py:14 theatre_gallery/models.py:38
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:14
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:14
+#: theatre_news/models.py:13 theatre_news/models.py:33
+#: theatre_news/templates/theatre_news/backend/news_list.html:13
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:13
+#: theatre_performance/models.py:15 theatre_performance/models.py:38
+#: theatre_performance/models.py:95
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:14
+msgid "Name"
+msgstr ""
+
+#: theatre_core/models.py:25 theatre_core/models.py:49
+msgid "Link"
+msgstr ""
+
+#: theatre_core/models.py:27 theatre_core/models.py:51
+msgid "Position"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:50
+msgid "News"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:51
+msgid "Static Pages"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:62
+msgid "Performace"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:63
+msgid "Parformance Schedule"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:64
+msgid "Parformance Genre"
+msgstr ""
+
+#: theatre_core/templates/theatre_core/backend/base.html:75
+#: theatre_gallery/models.py:43
+msgid "Gallery"
+msgstr ""
+
+#: theatre_gallery/models.py:16 theatre_gallery/models.py:40
+#: theatre_performance/models.py:40
+msgid "Description"
+msgstr ""
+
+#: theatre_gallery/models.py:18
+msgid "Author Name"
+msgstr ""
+
+#: theatre_gallery/models.py:20 theatre_news/models.py:16
+#: theatre_news/models.py:38 theatre_performance/models.py:20
+#: theatre_performance/models.py:42 theatre_performance/models.py:63
+msgid "Slug"
+msgstr ""
+
+#: theatre_gallery/models.py:22 theatre_news/models.py:17
+#: theatre_news/models.py:39 theatre_performance/models.py:59
+msgid "Is Published ?"
+msgstr ""
+
+#: theatre_gallery/models.py:42 theatre_performance/models.py:35
+#: theatre_performance/models.py:114
+msgid "Photo"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:5
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:5
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:4
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:5
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:5
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:5
+msgid "Confirm record delete"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:10
+msgid "Delete Gallery"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:14
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:14
+#: theatre_news/templates/theatre_news/backend/news_confirm_delete.html:13
+#: theatre_news/templates/theatre_news/backend/static_page_confirm_delete.html:13
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:13
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:14
+msgid "Warning!"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:14
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:14
+msgid " Are your sure to delete this Record ? "
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:16
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:16
+#: theatre_news/templates/theatre_news/backend/news_confirm_delete.html:15
+#: theatre_news/templates/theatre_news/backend/static_page_confirm_delete.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:16
+msgid "No"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_confirm_delete.html:17
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:17
+#: theatre_news/templates/theatre_news/backend/news_confirm_delete.html:16
+#: theatre_news/templates/theatre_news/backend/static_page_confirm_delete.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:17
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:17
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:17
+msgid "Yes"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_create_form.html:7
+#: theatre_gallery/templates/theatre_gallery/backend/photo_create_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_create_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_create_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_create_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_time_create_form.html:7
+msgid "Create Record"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_create_form.html:11
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:10
+msgid "Add Gallery"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_create_form.html:15
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_update_form.html:15
+#: theatre_gallery/templates/theatre_gallery/backend/photo_create_form.html:15
+#: theatre_gallery/templates/theatre_gallery/backend/photo_update_form.html:15
+#: theatre_news/templates/theatre_news/backend/news_create_form.html:14
+#: theatre_news/templates/theatre_news/backend/news_update_form.html:14
+#: theatre_news/templates/theatre_news/backend/static_page_create_form.html:14
+#: theatre_news/templates/theatre_news/backend/static_page_update_form.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_create_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_create_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_update_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_create_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_update_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_time_create_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_time_update_form.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_update_form.html:14
+msgid "Submit"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:4
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:4
+#: theatre_gallery/templates/theatre_gallery/frontend/gallery_detail.html:4
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:4
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:4
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:4
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:4
+msgid "List Record"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:7
+msgid "Gallery list"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:15
+#: theatre_news/templates/theatre_news/backend/news_list.html:14
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:14
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:20
+msgid "Go to URL"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:16
+msgid "Photos"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:17
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:29
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:15
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:24
+#: theatre_news/templates/theatre_news/backend/news_list.html:15
+#: theatre_news/templates/theatre_news/backend/news_list.html:25
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:15
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:25
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:24
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:15
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:24
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:17
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:29
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:21
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:36
+msgid "Edit"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:18
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:31
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:16
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:26
+#: theatre_news/templates/theatre_news/backend/news_list.html:16
+#: theatre_news/templates/theatre_news/backend/news_list.html:27
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:16
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:27
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:26
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:16
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:26
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:18
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:31
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:22
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:38
+msgid "Delete"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_list.html:27
+msgid "Show Photos"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_update_form.html:7
+#: theatre_gallery/templates/theatre_gallery/backend/photo_update_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_update_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_update_form.html:7
+#: theatre_performance/templates/theatre_performance/backend/performance_time_update_form.html:7
+msgid "Edit Record"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/gallery_update_form.html:11
+msgid "Edit Gallery"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/photo_confirm_delete.html:10
+msgid "Delete Photo"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/photo_create_form.html:11
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:10
+msgid "Add Photo"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/photo_list.html:7
+msgid "Photo list"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/backend/photo_update_form.html:11
+msgid "Edit Photo"
+msgstr ""
+
+#: theatre_gallery/templates/theatre_gallery/frontend/gallery_list.html:4
+#: theatre_gallery/templates/theatre_gallery/frontend/gallery_list.html:9
+msgid "GALLERY"
+msgstr ""
+
+#: theatre_news/models.py:15 theatre_news/models.py:37
+msgid "Long Text"
+msgstr ""
+
+#: theatre_news/models.py:36
+msgid "Short Text"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_confirm_delete.html:9
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:9
+msgid "Delete News Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_confirm_delete.html:13
+#: theatre_news/templates/theatre_news/backend/static_page_confirm_delete.html:13
+#: theatre_performance/templates/theatre_performance/backend/performance_confirm_delete.html:13
+msgid " Are your sure to delete this Page ? "
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_create_form.html:10
+#: theatre_performance/templates/theatre_performance/backend/performance_create_form.html:11
+msgid "Add news Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_list.html:6
+msgid "News list"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_list.html:9
+msgid "Add News"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/news_update_form.html:10
+#: theatre_news/templates/theatre_news/backend/static_page_update_form.html:10
+#: theatre_performance/templates/theatre_performance/backend/performance_update_form.html:10
+msgid "Edit Static Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/static_page_confirm_delete.html:9
+msgid "Delete Static Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/static_page_create_form.html:10
+msgid "Add Static Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:6
+msgid "Static page list"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/backend/static_page_list.html:9
+msgid "Add Page"
+msgstr ""
+
+#: theatre_news/templates/theatre_news/frontend/news_detail.html:25
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_detail.html:23
+msgid "Share on Facebook"
+msgstr ""
+
+#: theatre_performance/forms.py:24
+msgid "No picture"
+msgstr ""
+
+#: theatre_performance/forms.py:29
+msgid "Image can not be higher than 110px"
+msgstr ""
+
+#: theatre_performance/models.py:18
+msgid "CSS class name"
+msgstr ""
+
+#: theatre_performance/models.py:41
+msgid "Payroll"
+msgstr ""
+
+#: theatre_performance/models.py:56
+msgid "Performance"
+msgstr ""
+
+#: theatre_performance/models.py:57
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:15
+msgid "Date"
+msgstr ""
+
+#: theatre_performance/models.py:58
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:16
+msgid "Time"
+msgstr ""
+
+#: theatre_performance/models.py:60
+msgid "Event of month ?"
+msgstr ""
+
+#: theatre_performance/models.py:62
+msgid "System number"
+msgstr ""
+
+#: theatre_performance/models.py:98
+msgid "Donor Logo"
+msgstr ""
+
+#: theatre_performance/models.py:109
+msgid "Span Width"
+msgstr ""
+
+#: theatre_performance/models.py:112
+msgid "Short Description"
+msgstr ""
+
+#: theatre_performance/templates/base.html:61
+msgid "MEDIA"
+msgstr ""
+
+#: theatre_performance/templates/index.html:94
+msgid "Przedstawienia."
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_confirm_delete.html:10
+msgid "Delete Donor Genre"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_create_form.html:11
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:10
+msgid "Add Performance Donor"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_list.html:7
+msgid "Performance donors list"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_donor_update_form.html:11
+msgid "Edit Performance Donor"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_confirm_delete.html:10
+msgid "Delete Performance Genre"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_create_form.html:11
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:10
+msgid "Add Performance Genre"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_list.html:7
+msgid "Performance Genre list"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_genre_update_form.html:11
+msgid "Edit Performance Genre"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:7
+msgid "Performances list"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:10
+msgid "Add Performance"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:15
+msgid "Genre"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:16
+msgid "Performances"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_list.html:27
+msgid "List Events"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_confirm_delete.html:10
+msgid "Delete Performance Time"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_create_form.html:11
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:10
+msgid "Add Performance Time"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:7
+msgid "Performances Time list"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:17
+msgid "Published"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:18
+msgid "FrontPage"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_list.html:19
+msgid "Event of Month"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/backend/performance_time_update_form.html:11
+msgid "Edit Performance Time"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_calendar.html:22
+msgid "THEATRE"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_calendar.html:23
+msgid "MUSIC"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_calendar.html:24
+msgid "MOVIE"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_calendar.html:25
+msgid "EDUCATION"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_calendar.html:26
+msgid "MEETINGS"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_detail.html:61
+msgid "SPONSORS"
+msgstr ""
+
+#: theatre_performance/templates/theatre_performance/frontend/performance_time_index.html:42
+msgid "read more"
+msgstr ""
