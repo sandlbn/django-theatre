@@ -100,6 +100,10 @@ margin: 5px 0 5px 0;
 	padding: 0px 20px 0px;
 }
 
+.navbar {
+
+    margin-bottom: 0px;
+}
 
 .img-front {
 	max-height: 300px;
@@ -186,24 +190,25 @@ line-height: 15px;
     border-radius:0px;
 }
 h1,h2,h3 { 
-
 font-family: Lato;
 font-weight: 300;
 }
+h1 {
+    margin: 0px 10px 0px 0px;
+}
 h3 {
-
-text-align: center;
-#background-color: rgba(45, 44, 44, 0.3);
-#padding: 5px;
-font-size: 16px;
-line-height: 16px;
+    text-align: justify; text-justify: newspaper;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: left;
 }
 p {
     text-align: justify; text-justify: newspaper;
     #color: #000;
 }
 .news_list {
-    padding: 5px;
+    padding: 5px 15px 15px 0px;
 }
 .medias img {
     width:100%;
@@ -214,8 +219,43 @@ strong {
     font-weight: 400;
     font-style: italic;
 }
+small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
 .calendar_year {
     text-decoration: none;
     text-transform:uppercase;
     font-size: 22px;
+}
+.featured_wrapper_text {
+    position: relative;
+    width: 88%;
+    margin: 20px auto 0 auto;
+    font-size: 14px;
+    color: #fff;
+    text-align: justify;
+    overflow: hidden;
+    z-index: 0;
+}
+.pallete {
+    color: #fff;
+    text-align: center;
+}
+
+dl>a {
+    color: #fff;
+}
+dt,dl {
+    text-align:center;
+}
+.btn.btn-primary {
+    background-color: #7F8C8D;
+}
+.btn.btn-warning {
+    background-color: #2C3E50;
+}
+.btn.btn-warning:active, .btn-group.open .btn.btn-warning.dropdown-toggle, .btn.btn-warning.active {
+    background-color: #7F8C8D;
 }

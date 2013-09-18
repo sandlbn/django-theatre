@@ -4,6 +4,7 @@ __author__ = 'sandlbn'
 
 from django.conf.urls import patterns, url
 from .views import NewsDetailView
+from .views import NewsListView
 from .views import StaticPageDetailView
 from .views import NewsCreateView
 from .views import NewsUpdateView
@@ -21,6 +22,11 @@ urlpatterns = patterns(
         r'^news,(?P<slug>[\w\d-]+)/$',
         NewsDetailView.as_view(),
         name='frontend-news-detail'
+    ),
+    url(
+        r'^news/$',
+        NewsListView.as_view(),
+        name='frontend-news-list'
     ),
     url(
         r'^page,(?P<slug>[\w\d-]+)/$',

@@ -26,9 +26,15 @@
     <link href="{% static 'css/flat-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     <link href="{% static 'css/calendar.css' %}" rel="stylesheet">
-    <link href="{% static 'css/bootstrap-lightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lightbox.css' %}" rel="stylesheet">
+    {% if request.path != "/" %}
+    <style>
+.navbar .brand {
+    padding: 0px;
+}
+    </style>
+    {% endif %}
     {% endblock %}
-
     {% block angular %}
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     {% endblock %}
@@ -51,7 +57,7 @@
 											<li><a href="">NOWE KONTO</a></li>
 										</ul></li>
 									<li><a href="{% url 'frontend-gallery-list' %}">GALERIA</a></li>
-									<li><a href="http://video.teatrstary.eu/">LIVE</a></li>
+									<li><a href="http://video.teatrstary.eu/">VIDEO</a></li>
 									<li class="dropdown"><a class="dropdown-toggle"
 										data-toggle="dropdown"> KUP BILET <b class="caret"></b>
 									</a>
@@ -153,7 +159,7 @@ var js, fjs = d.getElementsByTagName(s)[0];
 
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/underscore-min.js' %}"></script>
-      <script src="{% static 'js/bootstrap-lightbox.min.js' %}"></script>
+      <script src="{% static 'js/lightbox-2.6.min.js' %}"></script>
     {% endblock javascript %}
     {% block javascript_user %}
     {% endblock %}

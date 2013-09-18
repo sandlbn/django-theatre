@@ -1,10 +1,10 @@
 {% extends 'theatre_core/frontend/base.html' %}
 {% load i18n %}
 
-{% block title %}{% blocktrans %}List Record{% endblocktrans %}{% endblock %}
+{% block title %}{% blocktrans %}{{ object.name|upper }}{% endblocktrans %}{% endblock %}
 {% block content %}
 <div class="row-fluid">
-    <div class="article">{{ object.name|upper }}</div>
+    <div class="article"><h1>{{ object.name|upper }}</h1></div>
 </div>
 <div class="row">
 {% for photo in photos %}
@@ -12,7 +12,7 @@
 </div><div class="row">
 {% endif %}
 <div class="span3">
-    <a href="{{ photo.picture.url }}" data-lightbox class="thumbnail">
+    <a href="{{ photo.picture.url }}" data-lightbox="roadtrip" class="thumbnail">
         <img src="{{ photo.picture.url }}"/>
     </a>
         <label>{{ photo.description }} </label>

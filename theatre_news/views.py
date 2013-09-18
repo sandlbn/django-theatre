@@ -41,6 +41,12 @@ class NewsListView(ListView):
     model = News
     template_name = 'theatre_news/frontend/news_list.html'
 
+    def get_queryset(self):
+
+        return self.model.objects.filter(
+            published=True
+        ).order_by('-id')
+
 
 class NewsListBackendView(ListView, StaffuserRequiredMixin):
 

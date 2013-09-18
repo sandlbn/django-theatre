@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row-fluid">
     <div class="span12">
-        <h1>{{ object.name }}</h1>
+        <h1>{{ object.name|upper }}</h1>
         <div class="article">
             {% autoescape off %}
             {{ object.long_text }}
