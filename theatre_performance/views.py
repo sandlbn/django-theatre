@@ -57,14 +57,14 @@ class PerformanceList(TemplateView):
     template_name = template_path(Performance, 'frontend', 'time_calendar')
 
 
-class PerformanceBackendListView(ListView):
+class PerformanceBackendListView(StaffuserRequiredMixin, ListView):
     ''' Start Page with listed Performances '''
 
     model = Performance
     template_name = template_path(Performance, 'backend', 'list')
 
 
-class PerformanceCreateView(CreateView, StaffuserRequiredMixin):
+class PerformanceCreateView(StaffuserRequiredMixin, CreateView):
 
     model = Performance
     form_class = PerformanceForm
@@ -72,7 +72,7 @@ class PerformanceCreateView(CreateView, StaffuserRequiredMixin):
     template_name = template_path(Performance, 'backend', 'create_form')
 
 
-class PerformanceUpdateView(UpdateView, StaffuserRequiredMixin):
+class PerformanceUpdateView(StaffuserRequiredMixin, UpdateView):
 
     model = Performance
     form_class = PerformanceForm
@@ -80,21 +80,21 @@ class PerformanceUpdateView(UpdateView, StaffuserRequiredMixin):
     template_name = template_path(Performance, 'backend', 'update_form')
 
 
-class PerformanceDeleteView(DeleteView, StaffuserRequiredMixin):
+class PerformanceDeleteView(StaffuserRequiredMixin, DeleteView):
 
     model = Performance
     success_url = reverse_lazy('backend-performance-list')
     template_name = template_path(Performance, 'backend', 'confirm_delete')
 
 
-class PerformanceGenreBackendListView(ListView):
+class PerformanceGenreBackendListView(StaffuserRequiredMixin, ListView):
     ''' Start Page with listed Performances '''
 
     model = PerformanceGenre
     template_name = template_path(PerformanceGenre, 'backend', 'list')
 
 
-class PerformanceGenreCreateView(CreateView, StaffuserRequiredMixin):
+class PerformanceGenreCreateView(StaffuserRequiredMixin, CreateView):
 
     model = PerformanceGenre
     form_class = PerformanceGenreForm
@@ -102,7 +102,7 @@ class PerformanceGenreCreateView(CreateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceGenre, 'backend', 'create_form')
 
 
-class PerformanceGenreUpdateView(UpdateView, StaffuserRequiredMixin):
+class PerformanceGenreUpdateView(StaffuserRequiredMixin, UpdateView):
 
     model = PerformanceGenre
     form_class = PerformanceGenreForm
@@ -110,7 +110,7 @@ class PerformanceGenreUpdateView(UpdateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceGenre, 'backend', 'update_form')
 
 
-class PerformanceGenreDeleteView(DeleteView, StaffuserRequiredMixin):
+class PerformanceGenreDeleteView(StaffuserRequiredMixin, DeleteView):
 
     model = PerformanceGenre
     success_url = reverse_lazy('backend-performance-genre-list')
@@ -118,14 +118,14 @@ class PerformanceGenreDeleteView(DeleteView, StaffuserRequiredMixin):
                                   'confirm_delete')
 
 
-class PerformanceTimeBackendListView(ListView):
+class PerformanceTimeBackendListView(StaffuserRequiredMixin, ListView):
     ''' Start Page with listed Performances '''
 
     model = PerformanceTime
     template_name = template_path(PerformanceTime, 'backend', 'list')
 
 
-class PerformanceTimeCreateView(CreateView, StaffuserRequiredMixin):
+class PerformanceTimeCreateView(StaffuserRequiredMixin, CreateView):
 
     model = PerformanceTime
     form_class = PerformanceTimeForm
@@ -133,7 +133,7 @@ class PerformanceTimeCreateView(CreateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceTime, 'backend', 'create_form')
 
 
-class PerformanceTimeUpdateView(UpdateView, StaffuserRequiredMixin):
+class PerformanceTimeUpdateView(StaffuserRequiredMixin, UpdateView):
 
     model = PerformanceTime
     form_class = PerformanceTimeForm
@@ -141,21 +141,21 @@ class PerformanceTimeUpdateView(UpdateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceTime, 'backend', 'update_form')
 
 
-class PerformanceTimeDeleteView(DeleteView, StaffuserRequiredMixin):
+class PerformanceTimeDeleteView(StaffuserRequiredMixin, DeleteView):
 
     model = PerformanceTime
     success_url = reverse_lazy('backend-performance-time-list')
     template_name = template_path(PerformanceTime, 'backend', 'confirm_delete')
 
 
-class PerformanceDonorBackendListView(ListView):
+class PerformanceDonorBackendListView(StaffuserRequiredMixin, ListView):
     ''' Start Page with listed Performance Donor '''
 
     model = PerformanceDonor
     template_name = template_path(PerformanceDonor, 'backend', 'list')
 
 
-class PerformanceDonorCreateView(CreateView, StaffuserRequiredMixin):
+class PerformanceDonorCreateView(StaffuserRequiredMixin, CreateView):
 
     model = PerformanceDonor
     form_class = PerformanceDonorForm
@@ -163,7 +163,7 @@ class PerformanceDonorCreateView(CreateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceDonor, 'backend', 'create_form')
 
 
-class PerformanceDonorUpdateView(UpdateView, StaffuserRequiredMixin):
+class PerformanceDonorUpdateView(StaffuserRequiredMixin, UpdateView):
 
     model = PerformanceDonor
     form_class = PerformanceDonorForm
@@ -171,7 +171,7 @@ class PerformanceDonorUpdateView(UpdateView, StaffuserRequiredMixin):
     template_name = template_path(PerformanceDonor, 'backend', 'update_form')
 
 
-class PerformanceDonorDeleteView(DeleteView, StaffuserRequiredMixin):
+class PerformanceDonorDeleteView(StaffuserRequiredMixin, DeleteView):
 
     model = PerformanceTime
     success_url = reverse_lazy('backend-performance-donor-list')
