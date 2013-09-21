@@ -230,6 +230,9 @@ small {
     text-transform:uppercase;
     font-size: 22px;
 }
+.event {
+    margin-bottom: 1px;
+}
 .featured_wrapper_text {
     position: relative;
     width: 88%;
@@ -260,3 +263,4 @@ dt,dl {
 .btn.btn-warning:active, .btn-group.open .btn.btn-warning.dropdown-toggle, .btn.btn-warning.active {
     background-color: #7F8C8D;
 }
+
