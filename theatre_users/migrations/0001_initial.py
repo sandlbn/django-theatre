@@ -2,14 +2,14 @@
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
-from django.db import models
+from django.db import model
 
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'User'
-        db.create_table(u'users_user', (
+        db.create_table(u'theatre_users_user', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('password', self.gf('django.db.models.fields.CharField')(max_length=128)),
             ('last_login', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
         db.send_create_signal(u'users', ['User'])
 
         # Adding M2M table for field groups on 'User'
-        m2m_table_name = db.shorten_name(u'users_user_groups')
+        m2m_table_name = db.shorten_name(u'theatre_users_user_groups')
         db.create_table(m2m_table_name, (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('user', models.ForeignKey(orm[u'users.user'], null=False)),
@@ -34,7 +34,7 @@ class Migration(SchemaMigration):
         db.create_unique(m2m_table_name, ['user_id', 'group_id'])
 
         # Adding M2M table for field user_permissions on 'User'
-        m2m_table_name = db.shorten_name(u'users_user_user_permissions')
+        m2m_table_name = db.shorten_name(u'theatre_users_user_user_permissions')
         db.create_table(m2m_table_name, (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('user', models.ForeignKey(orm[u'users.user'], null=False)),
