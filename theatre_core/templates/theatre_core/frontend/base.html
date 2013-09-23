@@ -133,6 +133,18 @@
                             <li><a href="/page,dla-mediow/">MEDIA / </a></li>
                             <li><a href="/page,regulamin-sprzedazy-biletow-online/">REGULAMIN SPRZEDAŻY / </a></li>
                             <li><a href="/newsletter/">NEWSLETTER / </a></li>
+                            <li>
+                            <form action="/i18n/setlang/" method="post" class="form-inline">
+                                {% csrf_token %} 
+                                <input name="next" type="hidden" value="/performances,callendar/" />
+                                <select name="language">
+                                    {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input type="submit" value="Go" />
+                            </form>
+                            </li>
                         </ul>
                     </div>
 
