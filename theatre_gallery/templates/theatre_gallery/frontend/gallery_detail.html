@@ -1,7 +1,7 @@
 {% extends 'theatre_core/frontend/base.html' %}
 {% load i18n %}
 
-{% block title %}{% blocktrans %}{{ object.name|upper }}{% endblocktrans %}{% endblock %}
+{% block title %}{% blocktrans %}{{ object.name }}{% endblocktrans %}{% endblock %}
 {% block content %}
 <div class="row-fluid">
     <div class="article"><h1>{{ object.name|upper }}</h1></div>
