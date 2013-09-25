@@ -1,0 +1,7 @@
+>>> for performance in performances:
+...    cal = CalendarEvent()
+cal.start = datetime.datetime( performance.performance_date.year,performance.performance_date.month, performance.performance_date.day, performance.performance_time.hour,  performance.performance_time.minute,  performance.performance_time.second) 
+cal.end = datetime.datetime( performance.performance_date.year,performance.performance_date.month, performance.performance_date.day, performance.performance_time.hour,  performance.performance_time.minute,  performance.performance_time.second) 
+cal.css_class = performance.performance.genre.css_class
+cal.title = performance.performance.name_pl
+...    cal.save()
