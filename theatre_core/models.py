@@ -53,3 +53,18 @@ class MenuBottom(TimeStampedModel):
 
     def __unicode__(self):
         return self.name
+
+
+@I18n('name')
+class Donor(TimeStampedModel):
+    name = models.CharField(max_length=255, verbose_name=_(u'Name'),
+                            null=False, blank=False, unique=True)
+    donor_logo = models.ImageField(upload_to='donors/logo',
+                                   verbose_name=_(u'Donor Logo'),
+                                   blank=True, null=True)
+    link = models.URLField(verbose_name=u'Link', blank=True, null=True)
+    position = models.IntegerField(verbose_name=_('Position'))
+    first_line = models.BooleanField(verbose_name=u'Fist Line', default=True)
+
+    def __unicode__(self):
+        return self.name

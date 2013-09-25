@@ -36,7 +36,7 @@
     <div class="header navbar">
       <div class="container">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/backend/">Home</a></li>
             {% comment %}
             News menu
             {% endcomment %}
@@ -71,12 +71,16 @@
             <ul class="dropdown-menu">
             <li><a href="{% url 'backend-gallery-list'  %}">{% trans "Gallery" %}</a></li>
             </ul>
+            {% comment %}Gallery {% endcomment %}
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Donors
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li><a href="{% url 'backend-donor-list'  %}">{% trans "Donors" %}</a></li>
+            </ul>
             </li>
-            {% comment %}
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-
-          {% endcomment %}
         </ul>
       </div>
     </div>
@@ -100,6 +104,14 @@
       <!-- Latest compiled and minified JavaScript -->
       <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
       <!-- Your stuff: Third-party javascript libraries go here -->
+      <script src="{% static 'js/jquery.tablesorter.js' %}"></script>
+      <script>  
+       $(document).ready(function() 
+               { 
+               $("table").tablesorter(); 
+               } 
+        ); 
+      </script>
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
