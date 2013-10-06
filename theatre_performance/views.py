@@ -151,8 +151,19 @@ class PerformanceTimeDeleteView(StaffuserRequiredMixin, DeleteView):
 class PerformanceDonorBackendListView(StaffuserRequiredMixin, ListView):
     ''' Start Page with listed Performance Donor '''
 
-    model = PerformanceDonor
     template_name = template_path(PerformanceDonor, 'backend', 'list')
+
+    def get_queryset(self):
+
+        performance_pk = self.kwargs['performance_pk']
+        return PerformanceDonor.objects.filter(performance=performance_pk)
+
+    def get_context_data(self, **kwargs):
+
+        context = super(PerformanceDonorBackendListView,
+                        self).get_context_data(**kwargs)
+        context['performance_pk'] = self.kwargs['performance_pk']
+        return context
 
 
 class PerformanceDonorCreateView(StaffuserRequiredMixin, CreateView):
@@ -161,6 +172,13 @@ class PerformanceDonorCreateView(StaffuserRequiredMixin, CreateView):
     form_class = PerformanceDonorForm
     success_url = reverse_lazy('backend-performance-donor-list')
     template_name = template_path(PerformanceDonor, 'backend', 'create_form')
+
+    def get_initial(self, **kwargs):
+
+        initial = super(PerformanceDonorCreateView, self).get_initial(**kwargs)
+        performance_pk = self.kwargs['performance_pk']
+        initial['performance'] = performance_pk
+        return initial
 
 
 class PerformanceDonorUpdateView(StaffuserRequiredMixin, UpdateView):

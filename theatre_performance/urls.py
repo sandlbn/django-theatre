@@ -111,12 +111,12 @@ urlpatterns = patterns(
         name='backend-performance-time-delete'
     ),
     url(
-        r'^backend/performancedonor/list/$',
+        r'^backend/performancedonor/list/(?P<performance_pk>\d+)/$',
         PerformanceDonorBackendListView.as_view(),
         name='backend-performance-donor-list'
     ),
     url(
-        r'^backend/performancedonor/create/$',
+        r'^backend/performancedonor/create/(?P<performance_pk>\d+)/$',
         PerformanceDonorCreateView.as_view(),
         name='backend-performance-donor-create'
     ),

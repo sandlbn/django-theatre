@@ -5,7 +5,7 @@
 {% block content %}
 <table class="table table-striped table-bordered table-hover">
     <legend>{% trans 'Performance donors list' %} / 
-        <a href="{% url 'backend-performance-donor-create' %}">
+        <a href="{% url 'backend-performance-donor-create' performance_pk %}">
             <i class="icon-plus-sign"></i> 
             {% trans 'Add Performance Donor' %}</a>
     </legend>

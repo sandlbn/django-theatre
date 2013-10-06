@@ -7,8 +7,8 @@
 {% block title %}{% blocktrans %}Edit Record{% endblocktrans %}{% endblock %}
 {% block content %}
 <div class="span12"> 
-    <form class="form-horizontal" role="form" action="{% url 'backend-gallery-update' form.instance.id %}" method="post">
-    <legend>{% trans 'Edit Gallery' %}</legend>
+    <form class="form-horizontal" role="form" enctype="multipart/form-data" action="{% url 'backend-donor-update' form.instance.id %}" method="post">
+    <legend>{% trans 'Edit Donor' %}</legend>
     {% csrf_token %} 
     {{ form|as_bootstrap:'horizontal' }}
     <p class="form-actions">

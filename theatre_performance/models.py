@@ -92,11 +92,19 @@ class PerformanceTime(TimeStampedModel):
 
 @I18n('name')
 class PerformanceDonor(TimeStampedModel):
+    DONOR_TYPE_CHOICES = (
+        ('sp', _('Sponsor')),
+        ('pr', _(u'Press'))
+    )
     name = models.CharField(max_length=255, verbose_name=_(u'Name'),
                             null=False, blank=False, unique=True)
     donor_logo = models.ImageField(upload_to='donors/logo',
                                    verbose_name=_(u'Donor Logo'),
                                    blank=True, null=True)
+    donor_type = models.CharField(max_length=2,
+                                  verbose_name=_(u'Donor Type'),
+                                  choices=DONOR_TYPE_CHOICES,
+                                  default='sponsor')
     link = models.URLField(verbose_name=u'Link', blank=True, null=True)
     performance = models.ForeignKey(Performance)
 
