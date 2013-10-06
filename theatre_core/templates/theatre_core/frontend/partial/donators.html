@@ -1,0 +1,15 @@
+{% for donator in donators %}
+    <div class="span2 thumbnail">
+        {% if donator.link %}
+        <a href="{{donator.link}}" target="_blank">
+        {% endif %}
+        {% if donator.donor_logo %}
+        <img src="{{ donator.donor_logo.url }}" alt="{{donator.name}}">
+        {% endif %}
+        {% if donator.link %}
+        </a>
+        {% endif %}
+    </div>
+    <div class="span1">
+    </div>
+{% endfor %}

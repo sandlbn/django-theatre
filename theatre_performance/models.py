@@ -5,9 +5,11 @@ from django.db.models.signals import post_delete
 from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
 from theatre_core.models import TimeStampedModel
+from django_bootstrap_calendar.models import CalendarEvent
 from easymode.i18n.decorators import I18n
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse_lazy
+import datetime
 
 
 @I18n('name')
@@ -89,6 +91,35 @@ class PerformanceTime(TimeStampedModel):
             args=[self.slug]
         )
 
+
+def django_calendar(sender, instance, **kwargs):
+    events = CalendarEvent.objects.filter(url=instance.get_absolute_url())
+    if events.count() > 0:
+        for event in events:
+            event.delete()
+    new_event = CalendarEvent()
+    new_event.title = instance.performance.name_pl
+    new_event.start = datetime.datetime(
+        instance.performance_date.year,
+        instance.performance_date.month,
+        instance.performance_date.day,
+        instance.performance_time.hour,
+        instance.performance_time.minute,
+        instance.performance_time.second
+    )
+    new_event.end = datetime.datetime(
+        instance.performance_date.year,
+        instance.performance_date.month,
+        instance.performance_date.day,
+        instance.performance_time.hour,
+        instance.performance_time.minute,
+        instance.performance_time.second
+    )
+    new_event.url = instance.get_absoulute_url()
+    new_event.css_class = instance.performance.genre.css_class
+    new_event.save()
+
+post_save.connect(django_calendar, sender=PerformanceTime)
 
 @I18n('name')
 class PerformanceDonor(TimeStampedModel):
