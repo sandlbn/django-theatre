@@ -1,5 +1,5 @@
 from django.db import models
-from theatre_core.models import Timestampable
+from theatre_core.models import TimeStampedModel
 
 class Chair(models.Model):
 

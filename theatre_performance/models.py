@@ -115,7 +115,7 @@ def django_calendar(sender, instance, **kwargs):
         instance.performance_time.minute,
         instance.performance_time.second
     )
-    new_event.url = instance.get_absoulute_url()
+    new_event.url = instance.get_absolute_url()
     new_event.css_class = instance.performance.genre.css_class
     new_event.save()
 

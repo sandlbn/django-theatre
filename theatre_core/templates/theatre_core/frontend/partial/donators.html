@@ -1,5 +1,5 @@
 {% for donator in donators %}
-    <div class="span2 thumbnail">
+    <div class="{{donator.css_class}} thumbnail">
         {% if donator.link %}
         <a href="{{donator.link}}" target="_blank">
         {% endif %}

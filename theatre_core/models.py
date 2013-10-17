@@ -62,6 +62,10 @@ class Donor(TimeStampedModel):
     donor_logo = models.ImageField(upload_to='donors/logo',
                                    verbose_name=_(u'Donor Logo'),
                                    blank=True, null=True)
+    css_class = models.CharField(max_length=100,
+                                 verbose_name=_(u'CSS class'),
+                                 default='span2'
+                                 )
     link = models.URLField(verbose_name=u'Link', blank=True, null=True)
     position = models.IntegerField(verbose_name=_('Position'))
     first_line = models.BooleanField(verbose_name=u'Fist Line', default=True)
